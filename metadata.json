@@ -1,0 +1,7 @@
+{
+  "name": "DUNO Nutri - Clínica de Nutrição",
+  "description": "Template premium para clínica de nutrição e emagrecimento com foco em ciência e bem-estar.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
