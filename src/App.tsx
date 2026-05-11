@@ -184,44 +184,46 @@ const Counter = ({ value, suffix = "", label }: { value: number, suffix?: string
   );
 };
 
-const ServiceCard: React.FC<{ service: any }> = ({ service }) => {
+const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index }) => {
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       whileHover={{ 
-        y: -10,
-        borderColor: "var(--color-primary)",
+        y: -12,
       }}
-      transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
-      className="bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-20px_rgba(5,150,105,0.15)] transition-all duration-500 flex flex-col h-full group"
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className="bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-[0_15px_40px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_30px_60px_-25px_rgba(5,150,105,0.2)] transition-all duration-700 flex flex-col h-full group"
     >
-      <div className="aspect-[16/11] overflow-hidden relative">
+      <div className="aspect-[16/12] overflow-hidden relative">
         <img 
           src={service.image} 
           alt={service.name} 
-          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110"
           referrerPolicy="no-referrer"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-secondary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-secondary px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg border border-white/20">
-          Especialidade
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 via-secondary/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+        
+        {/* Subtle Numbering for Editorial Look */}
+        <div className="absolute top-6 right-8 text-white/20 font-serif italic text-4xl group-hover:text-primary/40 transition-colors duration-500">
+          0{index + 1}
+        </div>
+
+        <div className="absolute bottom-6 left-6 bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+          Exclusivo
         </div>
       </div>
       
-      <div className="p-7 md:p-8 flex flex-col flex-grow items-start text-left relative bg-white">
-        {/* Icon Container - More Sophisticated */}
-        <div className="w-16 h-16 bg-primary/5 text-primary rounded-3xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-primary/30 group-hover:-rotate-6 ring-1 ring-primary/10 group-hover:ring-white">
-          {React.cloneElement(service.icon as React.ReactElement, { size: 32, strokeWidth: 1.5 })}
-        </div>
+      <div className="p-8 md:p-10 flex flex-col flex-grow items-start text-left relative">
+        <div className="w-10 h-[2px] bg-primary mb-6 transition-all duration-500 group-hover:w-20" />
         
-        <h3 className="text-xl md:text-2xl font-serif font-bold text-secondary mb-4 group-hover:text-primary transition-colors leading-tight">
+        <h3 className="text-2xl md:text-3xl font-serif font-bold text-secondary mb-4 group-hover:text-primary transition-colors leading-tight">
           {service.name}
         </h3>
         
-        <p className="text-gray-500 text-sm mb-8 flex-grow leading-relaxed font-medium opacity-80">
+        <p className="text-gray-500 text-sm md:text-base mb-8 flex-grow leading-relaxed font-medium opacity-80">
           {service.description}
         </p>
         
@@ -229,14 +231,12 @@ const ServiceCard: React.FC<{ service: any }> = ({ service }) => {
           href={`https://wa.me/5511992876219?text=Olá! Gostaria de saber mais sobre o ${service.name}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full inline-flex items-center justify-between bg-gray-50 group-hover:bg-primary text-secondary group-hover:text-white p-4 rounded-2xl font-bold text-sm transition-all duration-300 border border-gray-100 group-hover:border-primary shadow-sm overflow-hidden relative"
+          className="inline-flex items-center gap-3 text-secondary group-hover:text-primary font-bold text-sm md:text-base transition-all duration-300 group/link"
         >
-          <span className="relative z-10 flex items-center gap-3">
-            Agendar Consulta
-          </span>
-          <ArrowRight size={18} className="relative z-10 group-hover:translate-x-1 transition-transform" />
-          
-          <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+          <span>Agendar Consulta</span>
+          <div className="w-8 h-8 rounded-full border border-gray-200 group-hover/link:border-primary group-hover/link:bg-primary group-hover/link:text-white flex items-center justify-center transition-all duration-300">
+            <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
+          </div>
         </a>
       </div>
     </motion.div>
@@ -325,50 +325,42 @@ export default function App() {
     {
       name: "Emagrecimento Definitivo",
       description: "Perca peso de forma estratégica e sustentável com um plano alimentar que se adapta à sua rotina, sem restrições severas.",
-      image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-      icon: <Zap size={40} />
+      image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     },
     {
       name: "Performance Esportiva",
       description: "Otimize seus treinos, ganhe massa muscular e acelere sua recuperação com estratégias nutricionais de alto rendimento.",
-      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-      icon: <Dumbbell size={40} />
+      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     },
     {
       name: "Saúde e Longevidade",
       description: "Controle exames, melhore sua imunidade e previna doenças através de uma alimentação focada em densidade nutritiva.",
-      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-      icon: <Heart size={40} />
+      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     },
     {
       name: "Nutrição Comportamental",
       description: "Transforme sua relação com a comida. Aprenda a comer de forma consciente, eliminando o ciclo de dietas e a ansiedade.",
-      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-      icon: <Target size={40} />
+      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     },
     {
       name: "Saúde Gastrointestinal",
       description: "Tratamento focado em digestão, refluxo e saúde do intestino. Recupere seu bem-estar diário e acabe com o desconforto.",
-      image: "https://images.unsplash.com/photo-1476224483472-18cfa58b6ad1?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-      icon: <Apple size={40} />
+      image: "https://images.unsplash.com/photo-1476224483472-18cfa58b6ad1?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     },
     {
-      name: "Programas Premium",
-      description: "Acompanhamento intensivo com bioimpedância e suporte prioritário para quem busca resultados acelerados e monitorados.",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-      icon: <Award size={40} />
+      name: "Nutrição Estética",
+      description: "Protocolos nutricionais avançados para saúde da pele, cabelos e unhas, promovendo beleza de dentro para fora.",
+      image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     },
     {
       name: "Nutrição Materno-Infantil",
       description: "Cuidado especializado para gestantes e crianças, garantindo o melhor desenvolvimento nutricional desde o início da vida.",
-      image: "https://images.unsplash.com/photo-1531983412531-1f49a365ffed?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-      icon: <Baby size={40} />
+      image: "https://images.unsplash.com/photo-1531983412531-1f49a365ffed?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     },
     {
-      name: "Check-up Metabólico",
-      description: "Avaliação profunda da sua saúde metabólica com foco em equilíbrio hormonal e vitalidade celular.",
-      image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-      icon: <Activity size={40} />
+      name: "Programas Premium",
+      description: "Acompanhamento intensivo com bioimpedância e suporte prioritário para quem busca resultados acelerados e monitorados.",
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     }
   ];
 
@@ -628,9 +620,9 @@ export default function App() {
                 </p>
               </motion.div>
 
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-20">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-20">
                 {servicesList.map((service, index) => (
-                  <ServiceCard key={index} service={service} />
+                  <ServiceCard key={index} service={service} index={index} />
                 ))}
               </div>
 
