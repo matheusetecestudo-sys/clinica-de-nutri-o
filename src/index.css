@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
   
-  --color-primary: #10B981;
-  --color-secondary: #1F2937;
-  --color-accent: #F59E0B;
-  --color-light-bg: #F8FAFC;
+  --color-primary: #059669;
+  --color-secondary: #064E3B;
+  --color-accent: #D97706;
+  --color-light-bg: #F0FDF4;
 
   @keyframes shine {
     0% { transform: translateX(-100%); }

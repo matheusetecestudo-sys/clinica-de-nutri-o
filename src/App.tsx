@@ -191,36 +191,37 @@ const ServiceCard: React.FC<{ service: any }> = ({ service }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       whileHover={{ 
-        y: -5,
+        y: -10,
         borderColor: "var(--color-primary)",
       }}
-      transition={{ duration: 0.4 }}
-      className="bg-gradient-to-b from-white to-[#F8FAFC] rounded-[32px] overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full group"
+      transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+      className="bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-20px_rgba(5,150,105,0.15)] transition-all duration-500 flex flex-col h-full group"
     >
-      <div className="aspect-[16/10] overflow-hidden relative">
+      <div className="aspect-[16/11] overflow-hidden relative">
         <img 
           src={service.image} 
           alt={service.name} 
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
           referrerPolicy="no-referrer"
           loading="lazy"
         />
-        <div className="absolute top-3 left-3 bg-primary/90 backdrop-blur-md text-white px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest shadow-md">
-          Premium
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-secondary px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg border border-white/20">
+          Especialidade
         </div>
       </div>
       
-      <div className="p-6 md:p-7 flex flex-col flex-grow items-center text-center relative">
-        {/* Centralized Icon - More Compact */}
-        <div className="w-14 h-14 bg-secondary text-white rounded-2xl flex items-center justify-center mb-5 group-hover:bg-primary transition-all duration-500 shadow-lg shadow-secondary/10 group-hover:shadow-primary/20 group-hover:rotate-3 ring-2 ring-white">
-          {React.cloneElement(service.icon as React.ReactElement, { size: 28 })}
+      <div className="p-7 md:p-8 flex flex-col flex-grow items-start text-left relative bg-white">
+        {/* Icon Container - More Sophisticated */}
+        <div className="w-16 h-16 bg-primary/5 text-primary rounded-3xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-primary/30 group-hover:-rotate-6 ring-1 ring-primary/10 group-hover:ring-white">
+          {React.cloneElement(service.icon as React.ReactElement, { size: 32, strokeWidth: 1.5 })}
         </div>
         
-        <h3 className="text-xl md:text-2xl font-serif font-bold text-secondary mb-3 group-hover:text-primary transition-colors leading-tight">
+        <h3 className="text-xl md:text-2xl font-serif font-bold text-secondary mb-4 group-hover:text-primary transition-colors leading-tight">
           {service.name}
         </h3>
         
-        <p className="text-gray-500 text-xs md:text-sm mb-6 flex-grow leading-relaxed max-w-[240px]">
+        <p className="text-gray-500 text-sm mb-8 flex-grow leading-relaxed font-medium opacity-80">
           {service.description}
         </p>
         
@@ -228,22 +229,19 @@ const ServiceCard: React.FC<{ service: any }> = ({ service }) => {
           href={`https://wa.me/5511992876219?text=Olá! Gostaria de saber mais sobre o ${service.name}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full inline-flex items-center justify-center gap-2 bg-secondary text-white py-3.5 rounded-xl font-bold text-sm md:text-base hover:bg-primary transition-all shadow-md hover:shadow-primary/30 group/btn relative"
+          className="w-full inline-flex items-center justify-between bg-gray-50 group-hover:bg-primary text-secondary group-hover:text-white p-4 rounded-2xl font-bold text-sm transition-all duration-300 border border-gray-100 group-hover:border-primary shadow-sm overflow-hidden relative"
         >
-          {/* Tooltip */}
-          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 px-4 py-2 bg-secondary text-white text-xs font-bold rounded-xl shadow-xl opacity-0 group-hover/btn:opacity-100 transition-all duration-300 translate-y-2 group-hover/btn:translate-y-0 pointer-events-none whitespace-nowrap border border-white/10 backdrop-blur-md z-20">
-            <span>Agende sua consulta!</span>
-            {/* Tooltip Arrow */}
-            <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1.5 w-3 h-3 bg-secondary rotate-45 border-r border-b border-white/10" />
-          </div>
-
-          <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700 skew-x-12" />
-          <img 
-            src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-            alt="WhatsApp" 
-            className="w-5 h-5 brightness-0 invert group-hover/btn:scale-110 transition-transform" 
-          />
-          Agendar Agora
+          <span className="relative z-10 flex items-center gap-3">
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+              alt="WhatsApp" 
+              className="w-5 h-5 group-hover:brightness-0 group-hover:invert transition-all" 
+            />
+            Agendar Consulta
+          </span>
+          <ArrowRight size={18} className="relative z-10 group-hover:translate-x-1 transition-transform" />
+          
+          <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
         </a>
       </div>
     </motion.div>
@@ -304,7 +302,6 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
 // --- Main App ---
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('emagrecimento');
 
   const handleGlobalNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -329,86 +326,56 @@ export default function App() {
     }
   };
 
-  const services = {
-    emagrecimento: [
-      {
-        name: "Programa de Emagrecimento Saudável",
-        description: "Emagreça com saúde e sem passar fome com nosso método exclusivo focado em resultados reais.",
-        image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-        icon: <Zap size={40} />
-      },
-      {
-        name: "Reeducação Alimentar Personalizada",
-        description: "Aprenda a comer de tudo e mantenha seu peso ideal para sempre com prazer e liberdade.",
-        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-        icon: <Apple size={40} />
-      },
-      {
-        name: "Plano Low Carb Individualizado",
-        description: "Estratégia eficiente para queima de gordura rápida, com foco em saciedade e energia.",
-        image: "https://images.unsplash.com/photo-1494390248081-4e521a5940db?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-        icon: <Target size={40} />
-      },
-      {
-        name: "Emagrecimento com Suporte Hormonal",
-        description: "Equilíbrio metabólico completo para destravar seu emagrecimento de forma segura e científica.",
-        image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-        icon: <Activity size={40} />
-      }
-    ],
-    saude: [
-      {
-        name: "Consulta Nutricional Completa",
-        description: "Avaliação detalhada com bioimpedância para cuidar da sua saúde de forma integral e humana.",
-        image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-        icon: <Users size={40} />
-      },
-      {
-        name: "Acompanhamento Nutricional Mensal",
-        description: "Suporte contínuo via app exclusivo para você não perder o foco e atingir suas metas.",
-        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-        icon: <Calendar size={40} />
-      },
-      {
-        name: "Nutrição para Gestantes e Lactantes",
-        description: "Cuidado especial para a saúde da mamãe e o desenvolvimento pleno e saudável do bebê.",
-        image: "https://images.unsplash.com/photo-1531983412531-1f49a365ffed?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-        icon: <Heart size={40} />
-      },
-      {
-        name: "Nutrição Infantil e Adolescente",
-        description: "Criação de hábitos saudáveis desde cedo para um crescimento forte, feliz e equilibrado.",
-        image: "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-        icon: <Baby size={40} />
-      }
-    ],
-    performance: [
-      {
-        name: "Nutrição Esportiva e Ganho de Massa",
-        description: "Maximize seus treinos e conquiste o corpo que você sempre quis com estratégias avançadas.",
-        image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-        icon: <Dumbbell size={40} />
-      },
-      {
-        name: "Plano Cetogênico Personalizado",
-        description: "Alta performance mental e queima de gordura acelerada com foco em resultados consistentes.",
-        image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-        icon: <Zap size={40} />
-      },
-      {
-        name: "Aumento de Energia e Disposição",
-        description: "Sinta-se mais disposto e produtivo em todas as áreas da sua vida com a nutrição certa.",
-        image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-        icon: <Zap size={40} />
-      },
-      {
-        name: "Controle de Diabetes e Hipertensão",
-        description: "A alimentação como sua maior aliada no controle da saúde e longevidade sem restrições extremas.",
-        image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
-        icon: <Activity size={40} />
-      }
-    ]
-  };
+  const servicesList = [
+    {
+      name: "Emagrecimento Definitivo",
+      description: "Perca peso de forma estratégica e sustentável com um plano alimentar que se adapta à sua rotina, sem restrições severas.",
+      image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
+      icon: <Zap size={40} />
+    },
+    {
+      name: "Performance Esportiva",
+      description: "Otimize seus treinos, ganhe massa muscular e acelere sua recuperação com estratégias nutricionais de alto rendimento.",
+      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
+      icon: <Dumbbell size={40} />
+    },
+    {
+      name: "Saúde e Longevidade",
+      description: "Controle exames, melhore sua imunidade e previna doenças através de uma alimentação focada em densidade nutritiva.",
+      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
+      icon: <Heart size={40} />
+    },
+    {
+      name: "Nutrição Comportamental",
+      description: "Transforme sua relação com a comida. Aprenda a comer de forma consciente, eliminando o ciclo de dietas e a ansiedade.",
+      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
+      icon: <Target size={40} />
+    },
+    {
+      name: "Saúde Gastrointestinal",
+      description: "Tratamento focado em digestão, refluxo e saúde do intestino. Recupere seu bem-estar diário e acabe com o desconforto.",
+      image: "https://images.unsplash.com/photo-1476224483472-18cfa58b6ad1?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
+      icon: <Apple size={40} />
+    },
+    {
+      name: "Programas Premium",
+      description: "Acompanhamento intensivo com bioimpedância e suporte prioritário para quem busca resultados acelerados e monitorados.",
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
+      icon: <Award size={40} />
+    },
+    {
+      name: "Nutrição Materno-Infantil",
+      description: "Cuidado especializado para gestantes e crianças, garantindo o melhor desenvolvimento nutricional desde o início da vida.",
+      image: "https://images.unsplash.com/photo-1531983412531-1f49a365ffed?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
+      icon: <Baby size={40} />
+    },
+    {
+      name: "Check-up Metabólico",
+      description: "Avaliação profunda da sua saúde metabólica com foco em equilíbrio hormonal e vitalidade celular.",
+      image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
+      icon: <Activity size={40} />
+    }
+  ];
 
   const results = [
     {
@@ -667,46 +634,11 @@ export default function App() {
                 </p>
               </motion.div>
 
-              {/* Tabs Navigation - More Apparent */}
-              <div className="max-w-4xl mx-auto mb-12 md:mb-16">
-                <div className="bg-gray-50 p-2 md:p-3 rounded-3xl md:rounded-[32px] border border-gray-100 shadow-inner">
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                    {[
-                      { id: 'emagrecimento', label: 'Emagrecimento', icon: <Zap size={18} /> },
-                      { id: 'saude', label: 'Saúde e Bem-Estar', icon: <Heart size={18} /> },
-                      { id: 'performance', label: 'Performance e Esporte', icon: <Dumbbell size={18} /> }
-                    ].map((tab) => (
-                      <button
-                        key={tab.id}
-                        onClick={() => setActiveTab(tab.id)}
-                        className={`flex items-center justify-center gap-2 px-4 md:px-8 py-3.5 md:py-4 rounded-2xl md:rounded-[24px] text-sm md:text-base font-bold transition-all duration-300 ${
-                          activeTab === tab.id 
-                            ? 'bg-white text-primary shadow-lg scale-[1.02] border border-primary/10' 
-                            : 'text-gray-400 hover:text-secondary hover:bg-white/50'
-                        }`}
-                      >
-                        {tab.icon}
-                        {tab.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-                <div className="text-center mt-4 text-[10px] uppercase tracking-widest text-gray-400 font-bold">
-                  Selecione uma categoria para filtrar
-                </div>
-              </div>
-
-              <motion.div 
-                key={activeTab}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 md:mb-20"
-              >
-                {(services as any)[activeTab].map((service: any, index: number) => (
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-20">
+                {servicesList.map((service, index) => (
                   <ServiceCard key={index} service={service} />
                 ))}
-              </motion.div>
+              </div>
 
               {/* BMI Calculator Section */}
               <motion.div 
