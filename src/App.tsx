@@ -457,10 +457,10 @@ export default function App() {
                   </span>
                 </motion.div>
                 <h1 className="text-4xl md:text-8xl font-serif font-bold text-white leading-[0.95] md:leading-[0.9] mb-6 md:mb-8 tracking-tighter">
-                  Emagreça de forma <span className="text-primary italic">saudável</span> e mantenha o resultado.
+                  A ciência da <span className="text-primary italic">transformação</span> definitiva.
                 </h1>
                 <p className="text-base md:text-2xl text-white/80 mb-8 md:mb-12 leading-relaxed max-w-2xl font-light">
-                  Consultoria nutricional personalizada com base científica e acompanhamento humanizado para transformar sua relação com a comida.
+                  Abandone as dietas temporárias. Domine seu metabolismo com uma estratégia personalizada baseada em genética, comportamento e alta performance.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
                   <motion.a 
@@ -533,16 +533,23 @@ export default function App() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Nossa Fundadora</span>
+                  <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Autoridade Médica</span>
                   <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 md:mb-8 leading-tight">
-                    Ciência, empatia e <span className="text-primary italic">resultados reais</span>.
+                    Expertise clínica focada em <span className="text-primary italic">resultados extraordinários</span>.
                   </h2>
                   <p className="text-base md:text-lg text-gray-600 mb-4 md:mb-6 leading-relaxed">
-                    Olá, eu sou a <strong>Dra. Luciana Duno</strong>. Com mais de 15 anos de experiência clínica, minha missão é ajudar você a alcançar sua melhor versão sem dietas restritivas ou sofrimento.
+                    A <strong>Dra. Luciana Duno</strong> é referência nacional em emagrecimento sustentável. Com mais de 15 anos de atuação, ela desenvolveu um método exclusivo que une precisão diagnóstica e acolhimento humano.
                   </p>
                   <p className="text-base md:text-lg text-gray-600 mb-8 md:mb-10 leading-relaxed">
-                    Acreditamos que a nutrição vai muito além do que está no prato. É sobre comportamento, metabolismo e, acima de tudo, saúde mental e física em harmonia.
+                    Não entregamos apenas dietas; entregamos a liberdade de viver em seu melhor corpo. Nossa abordagem elimina o efeito sanfona através do equilíbrio hormonal e reprogramação metabólica.
                   </p>
+                  
+                  <div className="flex mb-12">
+                    <a href="https://wa.me/5511992876219" className="bg-secondary text-white px-8 py-4 rounded-2xl font-bold hover:bg-primary transition-all flex items-center gap-2 group shadow-xl shadow-secondary/10">
+                      Conhecer a Metodologia
+                      <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
 
                   <motion.div 
                     initial={{ opacity: 0, y: 20 }}
@@ -565,10 +572,10 @@ export default function App() {
           <section className="py-12 md:py-20 bg-light-bg overflow-hidden">
             <div className="container mx-auto px-4 md:px-6">
               <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-                <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Diferenciais</span>
-                <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary mb-6">Por que escolher a <span className="text-primary italic">DUNO Nutri</span>?</h2>
+                <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">O Padrão DUNO</span>
+                <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary mb-6">Inovação e <span className="text-primary italic">Precisão</span> para sua saúde</h2>
                 <p className="text-base md:text-lg text-gray-500">
-                  Unimos tecnologia de ponta com um olhar humanizado para garantir sua transformação.
+                  Abandonamos o "achismo". Utilizamos tecnologia de ponta e análise de dados para mapear cada detalhe do seu metabolismo.
                 </p>
               </div>
 
@@ -638,6 +645,109 @@ export default function App() {
                   <BMICalculator />
                 </Suspense>
               </motion.div>
+
+              {/* Mid-page CTA Banner */}
+              <motion.div 
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="mt-20 md:mt-32 bg-primary rounded-[32px] md:rounded-[48px] p-8 md:p-16 text-white relative overflow-hidden group shadow-2xl shadow-primary/30"
+              >
+                {/* Decorative background for CTA */}
+                <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
+
+                <div className="relative z-10 grid lg:grid-cols-2 items-center gap-8 md:gap-12">
+                  <div>
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">Pronto para assumir o <span className="italic underline underline-offset-8">controle</span> da sua vida?</h2>
+                    <p className="text-white/80 text-base md:text-xl mb-0 leading-relaxed">
+                      Não espere o momento perfeito. Ele não existe. Existe apenas a sua decisão de começar hoje com o suporte certo.
+                    </p>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 lg:justify-end">
+                    <a href="https://wa.me/5511992876219" className="bg-white text-primary px-8 md:px-10 py-4 md:py-6 rounded-2xl font-black uppercase tracking-widest hover:bg-secondary hover:text-white transition-all text-center shadow-xl">
+                      Começar Agora
+                    </a>
+                    <a href="#inicio" onClick={(e) => handleGlobalNavClick(e, "#inicio")} className="bg-primary-dark/20 backdrop-blur-md border border-white/20 text-white px-8 md:px-10 py-4 md:py-6 rounded-2xl font-black uppercase tracking-widest hover:bg-white/10 transition-all text-center">
+                      Voltar ao Topo
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* Methodology Section - New and Powerful */}
+          <section className="py-12 md:py-32 bg-secondary relative overflow-hidden">
+            {/* Background elements */}
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 translate-x-1/4" />
+            
+            <div className="container mx-auto px-4 md:px-6 relative z-10">
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <span className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-6 block">O Diferencial Competitivo</span>
+                  <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-8 leading-tight">
+                    Os 3 Pilares do <span className="text-primary italic">Método DUNO</span>
+                  </h2>
+                  <p className="text-gray-400 text-lg md:text-xl mb-12 leading-relaxed">
+                    Nossa metodologia foi desenhada para quem já tentou de tudo e busca uma solução definitiva, baseada no que há de mais moderno na ciência nutricional mundial.
+                  </p>
+                  
+                  <div className="space-y-8">
+                    {[
+                      { t: "Mapeamento Metabólico", d: "Análise profunda de exames e composição corporal para identificar gargalos que travam sua perda de gordura.", i: <Activity size={24} /> },
+                      { t: "Estratégia Comportamental", d: "Reprogramação de hábitos através da nutrição consciente, eliminando o ciclo de ansiedade e compulsão.", i: <Target size={24} /> },
+                      { t: "Suporte de Alta Performance", d: "Acompanhamento diário via app e suporte prioritário para garantir que você nunca perca o foco.", i: <Zap size={24} /> }
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex gap-6 group">
+                        <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-primary border border-white/10 group-hover:bg-primary group-hover:text-white transition-all duration-500 shrink-0">
+                          {item.i}
+                        </div>
+                        <div>
+                          <h4 className="text-white font-bold text-xl mb-2">{item.t}</h4>
+                          <p className="text-gray-500 text-sm leading-relaxed">{item.d}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1 }}
+                  className="relative"
+                >
+                  <div className="aspect-square rounded-[48px] overflow-hidden border border-white/10 shadow-2xl relative">
+                    <img 
+                      src="https://images.unsplash.com/photo-1543353071-087092ec393a?auto=format,compress&fit=crop&q=80&w=1000" 
+                      alt="Metodologia Científica DUNO"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
+                  </div>
+                  
+                  {/* Floating Result Card */}
+                  <div className="absolute -bottom-8 -left-8 bg-white p-8 rounded-3xl shadow-2xl max-w-[280px] hidden md:block">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                        <CheckCircle2 size={24} />
+                      </div>
+                      <div className="font-bold text-secondary">Aprovado por Especialistas</div>
+                    </div>
+                    <p className="text-gray-500 text-xs italic leading-relaxed">
+                      "A abordagem da Dra. Luciana é o que há de mais avançado em termos de nutrição integrativa e emagrecimento."
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </section>
 
