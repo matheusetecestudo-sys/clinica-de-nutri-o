@@ -92,10 +92,10 @@ const Header = ({ onNavClick }: { onNavClick: (e: React.MouseEvent<HTMLAnchorEle
             href="https://wa.me/5511992876219" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="bg-primary text-white px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 flex items-center gap-2"
+            className="bg-primary text-white px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 flex items-center gap-2 group"
           >
-            <MessageCircle size={16} />
             Agendar
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </a>
         </nav>
 
@@ -132,10 +132,10 @@ const Header = ({ onNavClick }: { onNavClick: (e: React.MouseEvent<HTMLAnchorEle
                 href="https://wa.me/5511992876219" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-primary text-white px-6 py-5 rounded-2xl text-center font-black uppercase tracking-widest flex items-center justify-center gap-3"
+                className="bg-primary text-white px-6 py-5 rounded-2xl text-center font-black uppercase tracking-widest flex items-center justify-center gap-3 group"
               >
-                <MessageCircle size={24} />
-                WhatsApp
+                Agendar Consulta
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
           </motion.div>
@@ -232,11 +232,6 @@ const ServiceCard: React.FC<{ service: any }> = ({ service }) => {
           className="w-full inline-flex items-center justify-between bg-gray-50 group-hover:bg-primary text-secondary group-hover:text-white p-4 rounded-2xl font-bold text-sm transition-all duration-300 border border-gray-100 group-hover:border-primary shadow-sm overflow-hidden relative"
         >
           <span className="relative z-10 flex items-center gap-3">
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-              alt="WhatsApp" 
-              className="w-5 h-5 group-hover:brightness-0 group-hover:invert transition-all" 
-            />
             Agendar Consulta
           </span>
           <ArrowRight size={18} className="relative z-10 group-hover:translate-x-1 transition-transform" />
@@ -485,9 +480,8 @@ export default function App() {
                     {/* Shine effect */}
                     <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shine" />
                     
-                    <MessageCircle size={20} className="md:w-6 md:h-6" />
-                    Agendar via WhatsApp
-                    <ArrowRight size={18} className="md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
+                    Solicitar Orçamento
+                    <ArrowRight size={20} className="md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
                   </motion.a>
                   <motion.a 
                     href="#servicos" 
@@ -861,7 +855,7 @@ export default function App() {
                   </p>
                   <div className="bg-white p-6 md:p-8 rounded-[24px] md:rounded-[32px] shadow-xl shadow-gray-100 flex items-center gap-4 md:gap-6">
                     <div className="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary shrink-0">
-                      <Phone size={24} className="md:w-7 md:h-7" />
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-7 h-7" />
                     </div>
                     <div>
                       <div className="font-bold text-base md:text-lg mb-1">Ainda com dúvidas?</div>
@@ -932,7 +926,7 @@ export default function App() {
 
                     <div className="flex items-start gap-4 md:gap-6">
                       <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-xl md:rounded-2xl flex items-center justify-center text-primary shrink-0">
-                        <MessageCircle size={20} className="md:w-6 md:h-6" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-5 h-5 brightness-0 invert" />
                       </div>
                       <div>
                         <div className="font-bold text-base md:text-lg mb-1">WhatsApp</div>
