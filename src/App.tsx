@@ -436,7 +436,7 @@ export default function App() {
                     decoding="async"
                   />
                 </picture>
-                <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-black/75 md:from-black/90 via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-black/85 md:from-black/95 via-black/60 to-black/20" />
               </div>
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -457,10 +457,10 @@ export default function App() {
                     Ciência e Acolhimento
                   </span>
                 </motion.div>
-                <h1 className="text-4xl md:text-7xl lg:text-8xl font-serif font-bold text-white leading-[0.95] md:leading-[0.9] mb-6 md:mb-8 tracking-tighter">
+                <h1 className="text-4xl md:text-7xl lg:text-8xl font-serif font-bold text-white leading-[0.95] md:leading-[0.9] mb-6 md:mb-8 tracking-tighter drop-shadow-2xl">
                   A ciência da <span className="text-primary italic">transformação</span> definitiva.
                 </h1>
-                <p className="text-base md:text-2xl text-white/80 mb-8 md:mb-12 leading-relaxed max-w-2xl font-light">
+                <p className="text-base md:text-2xl text-white/90 mb-8 md:mb-12 leading-relaxed max-w-2xl font-light drop-shadow-lg">
                   Abandone as dietas temporárias. Domine seu metabolismo com uma estratégia personalizada baseada em genética, comportamento e alta performance.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mt-8 md:mt-12 relative z-50">
@@ -808,11 +808,11 @@ export default function App() {
                         referrerPolicy="no-referrer"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end">
-                        <div className="text-white">
+                      <div className="absolute inset-0 bg-gradient-to-t from-secondary/95 via-secondary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end backdrop-blur-[2px]">
+                        <div className="text-white drop-shadow-md">
                           <div className="text-2xl font-bold mb-1">{result.name}, {result.age} anos</div>
                           <div className="text-primary font-bold text-lg mb-4">Menos {result.lost} eliminados</div>
-                          <p className="text-gray-300 text-sm leading-relaxed italic">
+                          <p className="text-gray-200 text-sm leading-relaxed italic">
                             "O acompanhamento da DUNO Nutri mudou minha vida. Aprendi a comer de verdade e recuperei minha autoestima."
                           </p>
                         </div>
@@ -840,11 +840,11 @@ export default function App() {
                         alt={results[activeResultIndex].name}
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/40 to-transparent p-6 flex flex-col justify-end">
-                        <div className="text-white">
+                      <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/60 to-transparent p-6 flex flex-col justify-end backdrop-blur-[1px]">
+                        <div className="text-white drop-shadow-lg">
                           <div className="text-xl font-bold mb-0.5">{results[activeResultIndex].name}, {results[activeResultIndex].age} anos</div>
                           <div className="text-primary font-bold text-base mb-2">Menos {results[activeResultIndex].lost} eliminados</div>
-                          <p className="text-gray-300 text-[10px] leading-relaxed italic line-clamp-3">
+                          <p className="text-gray-100 text-[10px] leading-relaxed italic line-clamp-3">
                             "Resultados incríveis em pouco tempo com o acompanhamento da Dra. Luciana."
                           </p>
                         </div>
