@@ -201,9 +201,9 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
         referrerPolicy="no-referrer"
         loading="lazy"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-secondary/95 via-secondary/40 to-transparent p-5 md:p-10 flex flex-col justify-end">
-        <h3 className="text-xl md:text-3xl font-serif font-bold text-white mb-2 drop-shadow-lg">{service.name}</h3>
-        <p className="text-white text-[12px] md:text-base leading-snug md:leading-relaxed mb-4 line-clamp-3 font-medium drop-shadow-md">
+      <div className="absolute inset-0 bg-gradient-to-t from-secondary/95 via-secondary/60 to-transparent p-5 md:p-10 flex flex-col justify-center items-center text-center">
+        <h3 className="text-xl md:text-3xl font-serif font-bold text-primary mb-3 drop-shadow-sm">{service.name}</h3>
+        <p className="text-white text-[12px] md:text-base leading-snug md:leading-relaxed mb-6 font-medium drop-shadow-md max-w-[280px]">
           {service.description}
         </p>
         
@@ -211,9 +211,9 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
           href={`https://wa.me/5511992876219?text=Olá! Gostaria de saber mais sobre o ${service.name}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-2 text-primary font-bold text-[12px] md:text-sm flex items-center gap-2 group/btn"
+          className="text-white border border-white/30 px-6 py-2 rounded-full font-bold text-[12px] md:text-sm flex items-center gap-2 hover:bg-primary hover:border-primary transition-all duration-300"
         >
-          Saiba mais <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+          Saiba mais <ArrowRight size={14} />
         </a>
       </div>
     </motion.div>
