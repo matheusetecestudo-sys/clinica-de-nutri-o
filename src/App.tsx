@@ -1104,38 +1104,7 @@ export default function App() {
             </div>
           </section>
 
-          {/* Instagram Section - Fixed to 4 images */}
-          <section className="py-12 md:py-20 bg-white">
-            <div className="container mx-auto px-6">
-              <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
-                <div>
-                  <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Lifestyle & Saúde</span>
-                  <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">Acompanhe no <span className="text-primary italic">Instagram</span></h2>
-                </div>
-                <a href="https://instagram.com" target="_blank" className="bg-secondary text-white px-8 py-4 rounded-2xl font-bold hover:bg-primary transition-all shadow-xl">@lucianadunonutri</a>
-              </div>
-              
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                {[
-                  "https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format,compress&fit=crop&q=80&w=600",
-                  "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format,compress&fit=crop&q=80&w=600",
-                  "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format,compress&fit=crop&q=80&w=600",
-                  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format,compress&fit=crop&q=80&w=600"
-                ].map((img, i) => (
-                  <motion.div 
-                    key={i}
-                    whileHover={{ y: -10 }}
-                    className="aspect-square rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl border border-gray-100 group relative"
-                  >
-                    <img src={img} alt="Instagram feed" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <Instagram className="text-white w-8 h-8" />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </section>
+
 
           {/* Footer */}
           <motion.footer 
