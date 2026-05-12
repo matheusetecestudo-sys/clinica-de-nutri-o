@@ -1124,13 +1124,7 @@ export default function App() {
               </div>
             </div>
           </section>
-}>
-                    <InteractiveMap />
-                  </Suspense>
-                </div>
-              </motion.div>
-            </div>
-          </section>
+
 
           {/* Footer */}
           <motion.footer 
