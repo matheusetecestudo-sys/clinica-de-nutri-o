@@ -201,9 +201,17 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
         referrerPolicy="no-referrer"
         loading="lazy"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-secondary/95 via-secondary/60 to-transparent p-5 md:p-10 flex flex-col justify-center items-center text-center">
-        <h3 className="text-xl md:text-3xl font-serif font-bold text-primary mb-3 drop-shadow-sm">{service.name}</h3>
-        <p className="text-white text-[12px] md:text-base leading-snug md:leading-relaxed mb-6 font-medium drop-shadow-md max-w-[280px]">
+      <div className="absolute inset-0 bg-gradient-to-t from-secondary/95 via-secondary/40 to-transparent p-5 md:p-10 flex flex-col justify-center items-center text-center backdrop-blur-[2px]">
+        <div className="mb-4">
+          <span className="bg-primary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg mb-3 inline-block">
+            Programa VIP
+          </span>
+          <h3 className="text-xl md:text-3xl font-serif font-bold text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
+            {service.name}
+          </h3>
+        </div>
+        
+        <p className="text-white/90 text-[12px] md:text-base leading-snug md:leading-relaxed mb-8 font-medium drop-shadow-md max-w-[280px]">
           {service.description}
         </p>
         
@@ -211,9 +219,9 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
           href={`https://wa.me/5511992876219?text=Olá! Gostaria de saber mais sobre o ${service.name}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white border border-white/30 px-6 py-2 rounded-full font-bold text-[12px] md:text-sm flex items-center gap-2 hover:bg-primary hover:border-primary transition-all duration-300"
+          className="bg-primary text-white px-8 py-3 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-white hover:text-primary transition-all duration-300 shadow-xl"
         >
-          Saiba mais <ArrowRight size={14} />
+          Saiba mais
         </a>
       </div>
     </motion.div>
