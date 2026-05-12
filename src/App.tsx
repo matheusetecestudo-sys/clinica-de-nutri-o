@@ -766,27 +766,13 @@ export default function App() {
                         </div>
                       </div>
 
-                      <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/10 to-transparent opacity-95 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end">
-                        <div className="text-white drop-shadow-2xl translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                          <div className="flex items-center gap-2 mb-3">
-                            <div className="bg-primary/20 backdrop-blur-md border border-primary/30 text-primary px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest flex items-center gap-1.5">
-                              <CheckCircle2 size={12} />
-                              Paciente Verificado
-                            </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/20 to-transparent opacity-95 group-hover:opacity-100 transition-opacity duration-500 p-10 flex flex-col justify-end">
+                        <div className="text-white drop-shadow-2xl translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                          <div className="bg-primary text-white inline-block px-4 py-2 rounded-xl text-lg font-black mb-6 shadow-2xl">
+                            -{result.lost} Eliminados
                           </div>
-                          <div className="text-3xl font-serif font-bold mb-1">{result.name}</div>
-                          <div className="text-white/60 font-bold text-xs mb-4 uppercase tracking-[0.2em]">{result.age} Anos • Bioindividualidade</div>
-                          
-                          <div className="grid grid-cols-2 gap-4 border-t border-white/10 pt-4">
-                            <div>
-                              <div className="text-primary font-black text-lg">-{result.lost}</div>
-                              <div className="text-[10px] text-white/40 uppercase font-bold tracking-widest">Peso Total</div>
-                            </div>
-                            <div>
-                              <div className="text-white font-black text-lg">100%</div>
-                              <div className="text-[10px] text-white/40 uppercase font-bold tracking-widest">Natural</div>
-                            </div>
-                          </div>
+                          <div className="text-3xl font-serif font-bold mb-2">{result.name}</div>
+                          <div className="text-white/60 font-bold text-sm uppercase tracking-[0.2em]">{result.age} Anos • Resultado Real</div>
                         </div>
                       </div>
                     </motion.div>
@@ -807,20 +793,16 @@ export default function App() {
                       <img 
                         src={results[activeResultIndex].image} 
                         alt={results[activeResultIndex].name}
-                        className="w-full h-full object-cover opacity-90"
+                        className="w-full h-full object-cover"
                       />
                       
-                      <div className="absolute top-6 left-6 bg-primary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg z-20">
-                        -{results[activeResultIndex].lost} Eliminados
-                      </div>
-
-                      <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/40 to-transparent p-8 flex flex-col justify-end backdrop-blur-[1px]">
+                      <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/40 to-transparent p-10 flex flex-col justify-end">
                         <div className="text-white drop-shadow-xl">
-                          <div className="text-2xl font-serif font-bold mb-1">{results[activeResultIndex].name}</div>
-                          <div className="text-primary font-bold text-xs mb-4 uppercase tracking-widest">{results[activeResultIndex].age} anos</div>
-                          <p className="text-gray-200 text-xs leading-relaxed italic border-l-2 border-primary pl-3">
-                            "Transformação real e duradoura com suporte especializado."
-                          </p>
+                          <div className="bg-primary text-white inline-block px-4 py-2 rounded-xl text-lg font-black mb-4 shadow-xl">
+                            -{results[activeResultIndex].lost}
+                          </div>
+                          <div className="text-3xl font-serif font-bold mb-1">{results[activeResultIndex].name}</div>
+                          <div className="text-white/60 font-bold text-sm uppercase tracking-widest">{results[activeResultIndex].age} Anos</div>
                         </div>
                       </div>
                     </motion.div>
