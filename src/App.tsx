@@ -185,65 +185,39 @@ const Counter = ({ value, suffix = "", label }: { value: number, suffix?: string
     </div>
   );
 };
-
 const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index }) => {
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ 
-        y: -12,
-      }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-[0_15px_40px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_30px_60px_-25px_rgba(5,150,105,0.2)] transition-all duration-700 flex flex-col h-full group"
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="group relative rounded-[32px] overflow-hidden aspect-square shadow-xl border border-gray-100 bg-white"
     >
-      <div className="aspect-[16/12] overflow-hidden relative">
-        <img 
-          src={service.image} 
-          alt={service.name} 
-          className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110"
-          referrerPolicy="no-referrer"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 via-secondary/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-        
-        {/* Subtle Numbering for Editorial Look */}
-        <div className="absolute top-6 right-8 text-white/20 font-serif italic text-4xl group-hover:text-primary/40 transition-colors duration-500">
-          0{index + 1}
-        </div>
-
-        <div className="absolute bottom-6 left-6 bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-          Exclusivo
-        </div>
-      </div>
-      
-      <div className="p-4 md:p-10 flex flex-col flex-grow items-start text-left relative">
-        <div className="w-8 h-[1px] bg-primary mb-4 transition-all duration-500 group-hover:w-16" />
-        
-        <h3 className="text-base md:text-3xl font-serif font-bold text-secondary mb-2 group-hover:text-primary transition-colors leading-tight">
-          {service.name}
-        </h3>
-        
-        <p className="text-[10px] md:text-base text-gray-500 mb-4 flex-grow leading-relaxed font-medium opacity-80">
-          {service.description}
-        </p>
+      <img 
+        src={service.image} 
+        alt={service.name} 
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        referrerPolicy="no-referrer"
+        loading="lazy"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/20 to-transparent p-6 md:p-8 flex flex-col justify-end">
+        <h3 className="text-xl md:text-2xl font-serif font-bold text-white mb-2">{service.name}</h3>
+        <p className="text-white/80 text-xs md:text-sm leading-relaxed">{service.description}</p>
         
         <a 
           href={`https://wa.me/5511992876219?text=Olá! Gostaria de saber mais sobre o ${service.name}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-secondary group-hover:text-primary font-bold text-[10px] md:text-base transition-all duration-300 group/link"
+          className="mt-4 text-primary font-bold text-[10px] md:text-sm flex items-center gap-2 group/btn"
         >
-          <span>Agendar</span>
-          <div className="w-6 h-6 md:w-8 md:h-8 rounded-full border border-gray-200 group-hover/link:border-primary group-hover/link:bg-primary group-hover/link:text-white flex items-center justify-center transition-all duration-300">
-            <ArrowRight size={12} className="group-hover/link:translate-x-1 transition-transform md:size-[16px]" />
-          </div>
+          Agendar Consulta <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
         </a>
       </div>
     </motion.div>
   );
 };
+;
 
 
 const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
@@ -326,28 +300,44 @@ export default function App() {
 
   const servicesList = [
     {
-      title: "Emagrecimento High-End",
-      description: "Domine seu metabolismo e elimine gordura de forma definitiva através da ciência da reprogramação hormonal.",
-      icon: <Target className="w-8 h-8" />,
-      features: ["Diagnóstico Metabólico", "Plano Anti-Inflamatório", "Suporte VIP"]
+      name: "Emagrecimento Definitivo",
+      description: "Emagrecimento sustentável sem restrições severas.",
+      image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     },
     {
-      title: "Performance & Hipertrofia",
-      description: "Acelere seus ganhos de massa muscular com estratégias nutricionais utilizadas por atletas de alto rendimento.",
-      icon: <Zap className="w-8 h-8" />,
-      features: ["Periodização Nutricional", "Suplementação de Elite", "Ajustes de Carga"]
+      name: "Performance Esportiva",
+      description: "Estratégias de alto rendimento para seus treinos.",
+      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     },
     {
-      title: "Longevidade & Saúde",
-      description: "Recupere sua vitalidade e equilíbrio interno. Nutrição funcional focada em reverter o envelhecimento celular.",
-      icon: <Activity className="w-8 h-8" />,
-      features: ["Bioindividualidade", "Modulação Intestinal", "Detox Sistêmico"]
+      name: "Saúde e Longevidade",
+      description: "Prevenção e imunidade com densidade nutritiva.",
+      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     },
     {
-      title: "Acompanhamento Global",
-      description: "A mesma excelência clínica em qualquer lugar do mundo. Consultas online e suporte 24/7 via app.",
-      icon: <Users className="w-8 h-8" />,
-      features: ["Suporte via WhatsApp", "Plano Digital", "Consultas em Vídeo"]
+      name: "Nutrição Comportamental",
+      description: "Comer consciente, sem dietas e ansiedade.",
+      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
+    },
+    {
+      name: "Saúde Gastrointestinal",
+      description: "Tratamento focado em digestão e saúde intestinal.",
+      image: "https://images.unsplash.com/photo-1476224483472-18cfa58b6ad1?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
+    },
+    {
+      name: "Nutrição Estética",
+      description: "Nutrição para pele, cabelos e beleza real.",
+      image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
+    },
+    {
+      name: "Nutrição Materno-Infantil",
+      description: "Acompanhamento para gestantes e crianças.",
+      image: "https://images.unsplash.com/photo-1531983412531-1f49a365ffed?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
+    },
+    {
+      name: "Programas Premium",
+      description: "Suporte VIP com bioimpedância e monitoramento.",
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     }
   ];
 
