@@ -555,18 +555,6 @@ export default function App() {
                     </a>
                   </div>
 
-                  <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    viewport={{ once: true }}
-                    className="grid grid-cols-2 gap-4 md:gap-8"
-                  >
-                    <Counter value={1800} suffix="+" label="Pacientes" />
-                    <Counter value={15} suffix="+" label="Anos de Exp." />
-                    <Counter value={98} suffix="%" label="Retenção" />
-                    <Counter value={10} suffix="k+" label="Kg Perdidos" />
-                  </motion.div>
                 </motion.div>
               </div>
             </div>
