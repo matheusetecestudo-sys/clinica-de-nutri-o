@@ -501,30 +501,6 @@ export default function App() {
             </motion.div>
           </section>
 
-          {/* Trust Bar - Authority Logos */}
-          <section className="py-8 bg-gray-50 border-y border-gray-100">
-            <div className="container mx-auto px-6">
-              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-20 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
-                <div className="flex items-center gap-2 font-serif font-bold text-secondary text-xl">
-                  <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary text-xs">CRN</div>
-                  Conselho Regional
-                </div>
-                <div className="flex items-center gap-2 font-serif font-bold text-secondary text-xl">
-                  <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary text-xs">SBN</div>
-                  Soc. Bras. Nutrição
-                </div>
-                <div className="flex items-center gap-2 font-serif font-bold text-secondary text-xl">
-                  <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary text-xs">USP</div>
-                  Pós-Graduação
-                </div>
-                <div className="flex items-center gap-2 font-serif font-bold text-secondary text-xl">
-                  <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary text-xs">ISSA</div>
-                  Sports Specialist
-                </div>
-              </div>
-            </div>
-          </section>
-
           {/* About Section */}
           <section id="sobre" className="py-12 md:py-20 bg-white scroll-mt-24 overflow-hidden">
             <div className="container mx-auto px-4 md:px-6">
@@ -592,33 +568,6 @@ export default function App() {
                     <Counter value={10} suffix="k+" label="Kg Perdidos" />
                   </motion.div>
                 </motion.div>
-              </div>
-            </div>
-          </section>
-
-          {/* Success Stats - Authority Builder */}
-          <section className="pb-12 md:pb-20 bg-light-bg">
-            <div className="container mx-auto px-4 md:px-6">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                {[
-                  { n: "+10.000", t: "Vidas Transformadas", d: "Resultados comprovados" },
-                  { n: "15", t: "Anos de Expertise", d: "Experiência clínica sólida" },
-                  { n: "98%", t: "Taxa de Satisfação", d: "Pacientes fidelizados" },
-                  { n: "+20kg", t: "Média de Perda", d: "Casos de obesidade" }
-                ].map((stat, idx) => (
-                  <motion.div 
-                    key={idx}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                    className="text-center p-6 md:p-8 bg-white rounded-3xl shadow-xl shadow-gray-100 border border-gray-50 group hover:border-primary/20 transition-all"
-                  >
-                    <div className="text-3xl md:text-5xl font-serif font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-500">{stat.n}</div>
-                    <div className="text-secondary font-bold text-[10px] md:text-sm uppercase tracking-widest mb-1">{stat.t}</div>
-                    <div className="text-gray-400 text-[8px] md:text-xs">{stat.d}</div>
-                  </motion.div>
-                ))}
               </div>
             </div>
           </section>
@@ -1103,7 +1052,7 @@ export default function App() {
           {/* Contact & Location Redesigned */}
           <section id="contato" className="py-20 md:py-32 bg-light-bg scroll-mt-24">
             <div className="container mx-auto px-6">
-              <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-stretch">
+              <div className="flex flex-col-reverse lg:flex-row gap-12 lg:gap-20 items-stretch">
                 {/* Info Block */}
                 <motion.div 
                   initial={{ opacity: 0, x: -50 }}
