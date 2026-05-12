@@ -30,7 +30,9 @@ import {
   Zap,
   Target,
   Calendar,
-  Star
+  Star,
+  Brain,
+  Dna
 } from "lucide-react";
 import { motion, AnimatePresence, useInView, useScroll, useTransform } from "motion/react";
 
@@ -642,25 +644,32 @@ export default function App() {
                   <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-8 leading-tight">
                     Os 3 Pilares do <span className="text-primary italic">Método DUNO</span>
                   </h2>
-                  <p className="text-gray-400 text-lg md:text-xl mb-12 leading-relaxed">
+                  <p className="text-white/80 text-lg md:text-xl mb-12 leading-relaxed">
                     Nossa metodologia foi desenhada para quem já tentou de tudo e busca uma solução definitiva, baseada no que há de mais moderno na ciência nutricional mundial.
                   </p>
                   
-                  <div className="space-y-8">
+                  <div className="space-y-6">
                     {[
-                      { t: "Mapeamento Metabólico", d: "Análise profunda de exames e composição corporal para identificar gargalos que travam sua perda de gordura.", i: <Activity size={24} /> },
-                      { t: "Estratégia Comportamental", d: "Reprogramação de hábitos através da nutrição consciente, eliminando o ciclo de ansiedade e compulsão.", i: <Target size={24} /> },
-                      { t: "Suporte de Alta Performance", d: "Acompanhamento diário via app e suporte prioritário para garantir que você nunca perca o foco.", i: <Zap size={24} /> }
+                      { t: "Ciência & Bioindividualidade", d: "Mapeamento genético e metabólico profundo para entender o que o seu corpo realmente precisa para queimar gordura.", i: <Dna size={24} /> },
+                      { t: "Reprogramação Comportamental", d: "Técnicas avançadas para dominar a ansiedade e os gatilhos emocionais, transformando sua relação com a comida.", i: <Brain size={24} /> },
+                      { t: "Performance Humana", d: "Monitoramento contínuo e ajustes dinâmicos no protocolo para garantir que sua evolução nunca encontre um platô.", i: <Activity size={24} /> }
                     ].map((item, idx) => (
-                      <div key={idx} className="flex gap-6 group">
-                        <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-primary border border-white/10 group-hover:bg-primary group-hover:text-white transition-all duration-500 shrink-0">
+                      <motion.div 
+                        key={idx} 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: idx * 0.2 }}
+                        viewport={{ once: true }}
+                        className="flex gap-6 p-6 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 group"
+                      >
+                        <div className="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg shadow-primary/20">
                           {item.i}
                         </div>
                         <div>
-                          <h4 className="text-white font-bold text-xl mb-2">{item.t}</h4>
-                          <p className="text-gray-500 text-sm leading-relaxed">{item.d}</p>
+                          <h4 className="text-white font-bold text-xl mb-2 group-hover:text-primary transition-colors">{item.t}</h4>
+                          <p className="text-white/70 text-sm leading-relaxed max-w-md font-medium">{item.d}</p>
                         </div>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </motion.div>
