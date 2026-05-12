@@ -419,7 +419,7 @@ export default function App() {
       <Header onNavClick={handleGlobalNavClick} />
 
       {/* Hero Section */}
-          <section id="inicio" className="relative min-h-[600px] md:h-screen flex flex-col pt-28 md:pt-32 pb-12 md:pb-20 overflow-hidden">
+          <section id="inicio" className="relative min-h-[600px] md:min-h-screen flex flex-col pt-28 md:pt-32 pb-12 md:pb-20">
               <div className="absolute inset-0 z-0">
                 <picture>
                   <source 
@@ -456,7 +456,7 @@ export default function App() {
                     Ciência e Acolhimento
                   </span>
                 </motion.div>
-                <h1 className="text-4xl md:text-8xl font-serif font-bold text-white leading-[0.95] md:leading-[0.9] mb-6 md:mb-8 tracking-tighter">
+                <h1 className="text-4xl md:text-7xl lg:text-8xl font-serif font-bold text-white leading-[0.95] md:leading-[0.9] mb-6 md:mb-8 tracking-tighter">
                   A ciência da <span className="text-primary italic">transformação</span> definitiva.
                 </h1>
                 <p className="text-base md:text-2xl text-white/80 mb-8 md:mb-12 leading-relaxed max-w-2xl font-light">
