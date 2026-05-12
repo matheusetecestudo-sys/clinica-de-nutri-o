@@ -297,6 +297,7 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
 // --- Main App ---
 
 export default function App() {
+  const [activeResultIndex, setActiveResultIndex] = useState(0);
 
   const handleGlobalNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -788,42 +789,98 @@ export default function App() {
                 </div>
               </motion.div>
 
-              <div className="grid md:grid-cols-3 gap-8">
-                {results.map((result, index) => (
-                  <motion.div 
-                    key={index}
-                    initial={{ opacity: 0, y: 80 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ 
-                      duration: 0.8, 
-                      delay: index * 0.15,
-                      ease: [0.21, 0.47, 0.32, 0.98]
-                    }}
-                    className="group relative rounded-[32px] overflow-hidden aspect-[3/4] shadow-xl"
-                  >
-                    <img 
-                      src={result.image} 
-                      alt={`Resultado real de emagrecimento de ${result.name} - Clínica DUNO Nutri`}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      referrerPolicy="no-referrer"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end">
-                      <div className="text-white">
-                        <div className="text-2xl font-bold mb-1">{result.name}, {result.age} anos</div>
-                        <div className="text-primary font-bold text-lg mb-4">Menos {result.lost} eliminados</div>
-                        <p className="text-gray-300 text-sm leading-relaxed">
-                          "O acompanhamento da DUNO Nutri mudou minha vida. Aprendi a comer de verdade e recuperei minha autoestima."
-                        </p>
+              <div className="relative">
+                {/* Desktop Grid (Hidden on Mobile) */}
+                <div className="hidden md:grid md:grid-cols-3 gap-8">
+                  {results.map((result, index) => (
+                    <motion.div 
+                      key={index}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: index * 0.15 }}
+                      className="group relative rounded-[32px] overflow-hidden aspect-[3/4] shadow-xl border-2 border-primary/20 hover:border-primary transition-all duration-500"
+                    >
+                      <img 
+                        src={result.image} 
+                        alt={`Resultado real de emagrecimento de ${result.name} - Clínica DUNO Nutri`}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        referrerPolicy="no-referrer"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end">
+                        <div className="text-white">
+                          <div className="text-2xl font-bold mb-1">{result.name}, {result.age} anos</div>
+                          <div className="text-primary font-bold text-lg mb-4">Menos {result.lost} eliminados</div>
+                          <p className="text-gray-300 text-sm leading-relaxed italic">
+                            "O acompanhamento da DUNO Nutri mudou minha vida. Aprendi a comer de verdade e recuperei minha autoestima."
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-secondary font-bold text-sm shadow-lg">
-                      Resultado Real
-                    </div>
-                  </motion.div>
-                ))}
+                      <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-secondary font-bold text-sm shadow-lg">
+                        Resultado Real
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Mobile Carousel */}
+                <div className="md:hidden relative px-2">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeResultIndex}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.4 }}
+                      className="relative rounded-[24px] overflow-hidden aspect-[4/5] shadow-2xl border-2 border-primary/30"
+                    >
+                      <img 
+                        src={results[activeResultIndex].image} 
+                        alt={results[activeResultIndex].name}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/40 to-transparent p-6 flex flex-col justify-end">
+                        <div className="text-white">
+                          <div className="text-xl font-bold mb-0.5">{results[activeResultIndex].name}, {results[activeResultIndex].age} anos</div>
+                          <div className="text-primary font-bold text-base mb-2">Menos {results[activeResultIndex].lost} eliminados</div>
+                          <p className="text-gray-300 text-[10px] leading-relaxed italic line-clamp-3">
+                            "Resultados incríveis em pouco tempo com o acompanhamento da Dra. Luciana."
+                          </p>
+                        </div>
+                      </div>
+                      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-secondary font-bold text-[10px] shadow-lg">
+                        Resultado Real
+                      </div>
+                    </motion.div>
+                  </AnimatePresence>
+
+                  {/* Navigation Arrows */}
+                  <div className="flex items-center justify-between absolute top-1/2 -translate-y-1/2 w-full left-0 px-1 pointer-events-none">
+                    <button 
+                      onClick={() => setActiveResultIndex((prev) => (prev - 1 + results.length) % results.length)}
+                      className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white pointer-events-auto active:bg-primary transition-all"
+                    >
+                      <ChevronRight className="rotate-180" size={24} />
+                    </button>
+                    <button 
+                      onClick={() => setActiveResultIndex((prev) => (prev + 1) % results.length)}
+                      className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white pointer-events-auto active:bg-primary transition-all"
+                    >
+                      <ChevronRight size={24} />
+                    </button>
+                  </div>
+                  
+                  {/* Indicators */}
+                  <div className="flex justify-center gap-1.5 mt-6">
+                    {results.map((_, i) => (
+                      <div 
+                        key={i} 
+                        className={`w-1.5 h-1.5 rounded-full transition-all ${i === activeResultIndex ? "bg-primary w-4" : "bg-gray-200"}`}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </section>
