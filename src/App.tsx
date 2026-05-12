@@ -723,11 +723,17 @@ export default function App() {
                     Histórias de superação e saúde que inspiram nossa dedicação diária.
                   </p>
                 </div>
-                <div className="hidden md:flex gap-4">
-                  <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary cursor-pointer transition-all">
+                <div className="md:hidden flex gap-4">
+                  <div 
+                    onClick={() => setActiveResultIndex((prev) => (prev - 1 + results.length) % results.length)}
+                    className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary cursor-pointer transition-all active:scale-95"
+                  >
                     <ChevronRight size={24} className="rotate-180" />
                   </div>
-                  <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary cursor-pointer transition-all">
+                  <div 
+                    onClick={() => setActiveResultIndex((prev) => (prev + 1) % results.length)}
+                    className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary cursor-pointer transition-all active:scale-95"
+                  >
                     <ChevronRight size={24} />
                   </div>
                 </div>
@@ -760,10 +766,27 @@ export default function App() {
                         </div>
                       </div>
 
-                      <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/10 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 p-10 flex flex-col justify-end">
-                        <div className="text-white drop-shadow-2xl translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                          <div className="text-3xl font-serif font-bold mb-2">{result.name}</div>
-                          <div className="text-primary font-bold text-sm mb-4 uppercase tracking-[0.2em]">{result.age} Anos • Foco em Saúde</div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/10 to-transparent opacity-95 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end">
+                        <div className="text-white drop-shadow-2xl translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                          <div className="flex items-center gap-2 mb-3">
+                            <div className="bg-primary/20 backdrop-blur-md border border-primary/30 text-primary px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest flex items-center gap-1.5">
+                              <CheckCircle2 size={12} />
+                              Paciente Verificado
+                            </div>
+                          </div>
+                          <div className="text-3xl font-serif font-bold mb-1">{result.name}</div>
+                          <div className="text-white/60 font-bold text-xs mb-4 uppercase tracking-[0.2em]">{result.age} Anos • Bioindividualidade</div>
+                          
+                          <div className="grid grid-cols-2 gap-4 border-t border-white/10 pt-4">
+                            <div>
+                              <div className="text-primary font-black text-lg">-{result.lost}</div>
+                              <div className="text-[10px] text-white/40 uppercase font-bold tracking-widest">Peso Total</div>
+                            </div>
+                            <div>
+                              <div className="text-white font-black text-lg">100%</div>
+                              <div className="text-[10px] text-white/40 uppercase font-bold tracking-widest">Natural</div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </motion.div>
