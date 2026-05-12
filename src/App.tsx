@@ -1102,6 +1102,8 @@ export default function App() {
                 </motion.div>
               </div>
             </div>
+          </section>
+
           {/* Instagram Section - Fixed to 4 images */}
           <section className="py-12 md:py-20 bg-white">
             <div className="container mx-auto px-6">
