@@ -205,7 +205,7 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
         <h3 className="text-xl md:text-2xl font-serif font-bold text-white mb-2 drop-shadow-md">
           {service.name}
         </h3>
-        <p className="text-white/90 text-[11px] md:text-sm leading-relaxed mb-4 line-clamp-2">
+        <p className="text-white text-[12px] md:text-sm leading-relaxed mb-4 font-medium">
           {service.description}
         </p>
         
