@@ -201,18 +201,17 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
         referrerPolicy="no-referrer"
         loading="lazy"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/40 to-transparent p-6 md:p-10 flex flex-col justify-end">
-        <h3 className="text-xl md:text-3xl font-serif font-bold text-white mb-3 drop-shadow-lg">{service.name}</h3>
-        <p className="text-white/90 text-xs md:text-base leading-relaxed mb-6 font-medium drop-shadow-md">{service.description}</p>
+      <div className="absolute inset-0 bg-gradient-to-t from-secondary/95 via-secondary/40 to-transparent p-6 md:p-8 flex flex-col justify-end">
+        <h3 className="text-xl md:text-2xl font-serif font-bold text-white mb-2">{service.name}</h3>
+        <p className="text-white/80 text-[10px] md:text-sm leading-relaxed line-clamp-2">{service.description}</p>
         
         <a 
           href={`https://wa.me/5511992876219?text=Olá! Gostaria de saber mais sobre o ${service.name}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-primary text-white px-6 py-4 rounded-2xl font-black uppercase tracking-widest text-[10px] md:text-xs flex items-center justify-center gap-3 shadow-2xl hover:bg-white hover:text-primary transition-all duration-300"
+          className="mt-4 text-primary font-bold text-[10px] md:text-sm flex items-center gap-2 group/btn"
         >
-          Agendar Consulta
-          <ArrowRight size={14} />
+          Saiba mais <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
         </a>
       </div>
     </motion.div>
