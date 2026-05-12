@@ -211,7 +211,7 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
           {service.name}
         </h3>
         
-        <p className="text-gray-500 text-xs md:text-sm leading-relaxed mb-6 flex-grow line-clamp-2">
+        <p className="text-gray-500 text-[11px] md:text-sm leading-relaxed mb-4 flex-grow">
           {service.description}
         </p>
         
