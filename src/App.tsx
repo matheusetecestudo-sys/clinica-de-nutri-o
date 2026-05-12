@@ -462,15 +462,14 @@ export default function App() {
                 <p className="text-base md:text-2xl text-white/80 mb-8 md:mb-12 leading-relaxed max-w-2xl font-light">
                   Abandone as dietas temporárias. Domine seu metabolismo com uma estratégia personalizada baseada em genética, comportamento e alta performance.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mt-8 md:mt-12">
+                <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mt-8 md:mt-12 relative z-50">
                   <motion.a 
                     href="https://wa.me/5511992876219" 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(121, 159, 12, 0.6)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="relative bg-primary text-white px-8 md:px-10 py-5 md:py-6 rounded-full font-black uppercase tracking-widest text-sm md:text-lg transition-all flex items-center justify-center gap-3 group shadow-2xl shadow-primary/40 overflow-hidden z-50"
+                    className="bg-primary text-white px-8 md:px-12 py-5 md:py-6 rounded-full font-black uppercase tracking-widest text-sm md:text-lg transition-all flex items-center justify-center gap-3 group shadow-2xl shadow-primary/40 overflow-hidden"
                   >
                     {/* Shine effect */}
                     <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shine" />
@@ -480,12 +479,10 @@ export default function App() {
                   </motion.a>
                   <motion.a 
                     href="#servicos" 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    onClick={(e) => handleGlobalNavClick(e, "#servicos")}
                     whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(255, 255, 255, 0.15)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="bg-white/10 backdrop-blur-xl text-white border border-white/20 px-8 md:px-10 py-5 md:py-6 rounded-full font-black uppercase tracking-widest text-sm md:text-lg hover:bg-white hover:text-secondary transition-all flex items-center justify-center gap-2 z-50"
+                    className="bg-white/10 backdrop-blur-xl text-white border border-white/30 px-8 md:px-12 py-5 md:py-6 rounded-full font-black uppercase tracking-widest text-sm md:text-lg hover:bg-white hover:text-secondary transition-all flex items-center justify-center gap-2"
                   >
                     Nossos Serviços
                   </motion.a>
