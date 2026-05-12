@@ -500,6 +500,30 @@ export default function App() {
             </motion.div>
           </section>
 
+          {/* Trust Bar - Authority Logos */}
+          <section className="py-8 bg-gray-50 border-y border-gray-100">
+            <div className="container mx-auto px-6">
+              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-20 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+                <div className="flex items-center gap-2 font-serif font-bold text-secondary text-xl">
+                  <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary text-xs">CRN</div>
+                  Conselho Regional
+                </div>
+                <div className="flex items-center gap-2 font-serif font-bold text-secondary text-xl">
+                  <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary text-xs">SBN</div>
+                  Soc. Bras. Nutrição
+                </div>
+                <div className="flex items-center gap-2 font-serif font-bold text-secondary text-xl">
+                  <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary text-xs">USP</div>
+                  Pós-Graduação
+                </div>
+                <div className="flex items-center gap-2 font-serif font-bold text-secondary text-xl">
+                  <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary text-xs">ISSA</div>
+                  Sports Specialist
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* About Section */}
           <section id="sobre" className="py-12 md:py-20 bg-white scroll-mt-24 overflow-hidden">
             <div className="container mx-auto px-4 md:px-6">
@@ -567,49 +591,6 @@ export default function App() {
                     <Counter value={10} suffix="k+" label="Kg Perdidos" />
                   </motion.div>
                 </motion.div>
-              </div>
-            </div>
-          </section>
-
-          {/* Why DUNO Section */}
-          <section className="py-12 md:py-20 bg-light-bg overflow-hidden">
-            <div className="container mx-auto px-4 md:px-6">
-              <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-                <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">O Padrão DUNO</span>
-                <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary mb-6">Inovação e <span className="text-primary italic">Precisão</span> para sua saúde</h2>
-                <p className="text-base md:text-lg text-gray-500">
-                  Abandonamos o "achismo". Utilizamos tecnologia de ponta e análise de dados para mapear cada detalhe do seu metabolismo.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-                {[
-                  { title: "Bioimpedância Inclusa", desc: "Avaliação precisa da sua composição corporal em todas as consultas.", icon: <Activity /> },
-                  { title: "App Exclusivo", desc: "Seu plano alimentar, metas e chat direto no seu celular.", icon: <Zap /> },
-                  { title: "Suporte Diário", desc: "Tire suas dúvidas e receba motivação constante via WhatsApp.", icon: <MessageCircle /> },
-                  { title: "Exames Laboratoriais", desc: "Análise profunda dos seus marcadores de saúde e metabolismo.", icon: <Heart /> },
-                  { title: "Receitas Práticas", desc: "Acesso a um banco de dados com centenas de receitas saudáveis.", icon: <Apple /> },
-                  { title: "Foco Comportamental", desc: "Trabalhamos sua relação com a comida para resultados duradouros.", icon: <Target /> }
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ 
-                      duration: 0.7, 
-                      delay: index * 0.1,
-                      ease: [0.21, 0.47, 0.32, 0.98]
-                    }}
-                    className="bg-white p-6 md:p-10 rounded-[24px] md:rounded-[32px] shadow-xl shadow-gray-100 border border-gray-50 hover:border-primary/20 transition-all group"
-                  >
-                    <div className="w-12 h-12 md:w-14 md:h-14 bg-primary/10 rounded-xl md:rounded-2xl flex items-center justify-center text-primary mb-4 md:mb-6 group-hover:bg-primary group-hover:text-white transition-all">
-                      {item.icon}
-                    </div>
-                    <h3 className="text-lg md:text-xl font-bold text-secondary mb-2 md:mb-4">{item.title}</h3>
-                    <p className="text-gray-500 text-xs md:text-sm leading-relaxed">{item.desc}</p>
-                  </motion.div>
-                ))}
               </div>
             </div>
           </section>
@@ -847,54 +828,6 @@ export default function App() {
             </div>
           </section>
 
-          {/* How It Works / Programas */}
-          <section id="programas" className="py-12 md:py-20 bg-secondary text-white scroll-mt-24">
-            <motion.div 
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="container mx-auto px-4 md:px-6"
-            >
-              <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
-                <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 md:mb-6">Nossos Programas e Metodologia</h2>
-                <p className="text-gray-400 text-base md:text-lg">
-                  Um processo estruturado e científico para garantir que você alcance e mantenha seus objetivos de saúde.
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-4 gap-8 md:gap-12 relative">
-                {[
-                  { title: "Avaliação Inicial", desc: "Análise completa do seu histórico, exames e objetivos.", icon: <Users /> },
-                  { title: "Plano Personalizado", desc: "Criação da estratégia nutricional exclusiva para você.", icon: <Target /> },
-                  { title: "Acompanhamento", desc: "Suporte semanal para ajustes e motivação constante.", icon: <Clock /> },
-                  { title: "Manutenção", desc: "Estratégias para manter os resultados por toda a vida.", icon: <Award /> }
-                ].map((step, index) => (
-                  <motion.div 
-                    key={index} 
-                    initial={{ opacity: 0, y: 80 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ 
-                      duration: 0.8, 
-                      delay: index * 0.15,
-                      ease: [0.21, 0.47, 0.32, 0.98]
-                    }}
-                    className="relative z-10 flex flex-col items-center text-center"
-                  >
-                    <div className="w-20 h-20 bg-primary rounded-3xl flex items-center justify-center text-white mb-8 shadow-2xl shadow-primary/20">
-                      {step.icon}
-                    </div>
-                    <div className="text-primary font-bold mb-2">Passo 0{index + 1}</div>
-                    <h3 className="text-xl font-bold mb-4">{step.title}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">
-                      {step.desc}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </section>
 
           {/* Testimonials Section */}
           <section id="depoimentos" className="py-12 md:py-20 bg-white scroll-mt-24">
@@ -916,26 +849,31 @@ export default function App() {
             </div>
           </section>
 
-          {/* Instagram Feed Section */}
-          <section className="py-12 md:py-20 bg-light-bg overflow-hidden">
+          {/* Instagram Section Redesigned */}
+          <section className="py-12 md:py-24 bg-light-bg overflow-hidden">
             <div className="container mx-auto px-6">
-              <div className="flex flex-col md:flex-row items-end justify-between mb-8 md:mb-12 gap-6">
+              <div className="flex flex-col md:flex-row items-end justify-between mb-12 md:mb-16 gap-6">
                 <div className="max-w-2xl">
-                  <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Acompanhe no Instagram</span>
-                  <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">Vida Saudável no <span className="text-primary italic">Dia a Dia</span></h2>
+                  <span className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Comunidade DUNO</span>
+                  <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary leading-tight">
+                    Transformações reais no <span className="text-primary italic">Dia a Dia</span>
+                  </h2>
+                  <p className="text-gray-500 mt-4 text-sm md:text-base">
+                    Acompanhe bastidores, dicas exclusivas e resultados de pacientes que decidiram mudar de vida. 
+                  </p>
                 </div>
                 <a 
                   href="https://instagram.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-white text-secondary px-8 py-4 rounded-2xl font-bold border border-gray-100 hover:border-primary hover:text-primary transition-all flex items-center gap-2"
+                  className="bg-white text-secondary px-8 py-4 rounded-2xl font-bold border border-gray-100 hover:border-primary hover:text-primary transition-all flex items-center gap-2 shadow-sm"
                 >
                   <Instagram size={20} />
-                  Seguir @dunonutri
+                  Ver Instagram
                 </a>
               </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+ 
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-16">
                 {[
                   "https://images.unsplash.com/photo-1490645935967-10de6ba17061",
                   "https://images.unsplash.com/photo-1512621776951-a57141f2eefd",
@@ -960,13 +898,75 @@ export default function App() {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       referrerPolicy="no-referrer"
                       loading="lazy"
-                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <Instagram size={32} className="text-white" />
                     </div>
                   </motion.a>
                 ))}
+              </div>
+
+              {/* Added WhatsApp CTA below Instagram */}
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-secondary rounded-[32px] p-8 md:p-12 text-center text-white relative overflow-hidden"
+              >
+                <div className="relative z-10">
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold mb-6">Inspirado por esses resultados?</h3>
+                  <p className="text-gray-400 mb-10 max-w-xl mx-auto">Sua transformação pode ser a próxima. Agende uma conversa inicial e descubra o caminho para o seu melhor corpo.</p>
+                  <a 
+                    href="https://wa.me/5511992876219" 
+                    className="inline-flex bg-primary text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 items-center gap-3"
+                  >
+                    Quero meus resultados
+                    <ArrowRight size={20} />
+                  </a>
+                </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* Patient Journey - Step by Step */}
+          <section className="py-12 md:py-24 bg-white">
+            <div className="container mx-auto px-6">
+              <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+                <span className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">A Jornada DUNO</span>
+                <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">Sua evolução em <span className="text-primary italic">4 etapas</span></h2>
+              </div>
+
+              <div className="grid md:grid-cols-4 gap-8 relative">
+                {/* Connecting Line (Desktop) */}
+                <div className="absolute top-1/4 left-0 w-full h-[1px] bg-gray-100 hidden md:block -z-0" />
+                
+                {[
+                  { t: "Diagnóstico", d: "Avaliação completa de exames, bioimpedância e rotina atual.", n: "01" },
+                  { t: "Estratégia", d: "Criação do seu plano alimentar exclusivo e personalizado.", n: "02" },
+                  { t: "Implementação", d: "Acesso ao app de suporte e início da reprogramação metabólica.", n: "03" },
+                  { t: "Consolidação", d: "Ajustes constantes para garantir que o resultado seja definitivo.", n: "04" }
+                ].map((step, idx) => (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.2 }}
+                    className="bg-white p-8 rounded-[32px] border border-gray-50 shadow-xl shadow-gray-100 relative z-10 group hover:border-primary/20 transition-all"
+                  >
+                    <div className="w-12 h-12 bg-primary text-white rounded-2xl flex items-center justify-center font-black text-xl mb-6 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">
+                      {step.n}
+                    </div>
+                    <h4 className="text-xl font-bold text-secondary mb-3">{step.t}</h4>
+                    <p className="text-gray-500 text-sm leading-relaxed">{step.d}</p>
+                  </motion.div>
+                ))}
+              </div>
+              
+              <div className="mt-16 text-center">
+                <a href="https://wa.me/5511992876219" className="text-primary font-bold hover:underline flex items-center justify-center gap-2">
+                  Ver disponibilidade na agenda <ArrowRight size={18} />
+                </a>
               </div>
             </div>
           </section>
