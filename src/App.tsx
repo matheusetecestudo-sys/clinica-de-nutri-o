@@ -216,14 +216,14 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
         </div>
       </div>
       
-      <div className="p-8 md:p-10 flex flex-col flex-grow items-start text-left relative">
-        <div className="w-10 h-[2px] bg-primary mb-6 transition-all duration-500 group-hover:w-20" />
+      <div className="p-4 md:p-10 flex flex-col flex-grow items-start text-left relative">
+        <div className="w-8 h-[1px] bg-primary mb-4 transition-all duration-500 group-hover:w-16" />
         
-        <h3 className="text-2xl md:text-3xl font-serif font-bold text-secondary mb-4 group-hover:text-primary transition-colors leading-tight">
+        <h3 className="text-base md:text-3xl font-serif font-bold text-secondary mb-2 group-hover:text-primary transition-colors leading-tight">
           {service.name}
         </h3>
         
-        <p className="text-gray-500 text-sm md:text-base mb-8 flex-grow leading-relaxed font-medium opacity-80">
+        <p className="text-[10px] md:text-base text-gray-500 mb-4 flex-grow leading-relaxed font-medium opacity-80">
           {service.description}
         </p>
         
@@ -231,11 +231,11 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
           href={`https://wa.me/5511992876219?text=Olá! Gostaria de saber mais sobre o ${service.name}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 text-secondary group-hover:text-primary font-bold text-sm md:text-base transition-all duration-300 group/link"
+          className="inline-flex items-center gap-2 text-secondary group-hover:text-primary font-bold text-[10px] md:text-base transition-all duration-300 group/link"
         >
-          <span>Agendar Consulta</span>
-          <div className="w-8 h-8 rounded-full border border-gray-200 group-hover/link:border-primary group-hover/link:bg-primary group-hover/link:text-white flex items-center justify-center transition-all duration-300">
-            <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
+          <span>Agendar</span>
+          <div className="w-6 h-6 md:w-8 md:h-8 rounded-full border border-gray-200 group-hover/link:border-primary group-hover/link:bg-primary group-hover/link:text-white flex items-center justify-center transition-all duration-300">
+            <ArrowRight size={12} className="group-hover/link:translate-x-1 transition-transform md:size-[16px]" />
           </div>
         </a>
       </div>
@@ -324,42 +324,42 @@ export default function App() {
   const servicesList = [
     {
       name: "Emagrecimento Definitivo",
-      description: "Perca peso de forma estratégica e sustentável com um plano alimentar que se adapta à sua rotina, sem restrições severas.",
+      description: "Emagrecimento sustentável sem restrições severas.",
       image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     },
     {
       name: "Performance Esportiva",
-      description: "Otimize seus treinos, ganhe massa muscular e acelere sua recuperação com estratégias nutricionais de alto rendimento.",
+      description: "Estratégias de alto rendimento para seus treinos.",
       image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     },
     {
       name: "Saúde e Longevidade",
-      description: "Controle exames, melhore sua imunidade e previna doenças através de uma alimentação focada em densidade nutritiva.",
+      description: "Prevenção e imunidade com densidade nutritiva.",
       image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     },
     {
       name: "Nutrição Comportamental",
-      description: "Transforme sua relação com a comida. Aprenda a comer de forma consciente, eliminando o ciclo de dietas e a ansiedade.",
+      description: "Comer consciente, sem dietas e ansiedade.",
       image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     },
     {
       name: "Saúde Gastrointestinal",
-      description: "Tratamento focado em digestão, refluxo e saúde do intestino. Recupere seu bem-estar diário e acabe com o desconforto.",
+      description: "Tratamento focado em digestão e saúde intestinal.",
       image: "https://images.unsplash.com/photo-1476224483472-18cfa58b6ad1?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     },
     {
       name: "Nutrição Estética",
-      description: "Protocolos nutricionais avançados para saúde da pele, cabelos e unhas, promovendo beleza de dentro para fora.",
+      description: "Nutrição para pele, cabelos e beleza real.",
       image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     },
     {
       name: "Nutrição Materno-Infantil",
-      description: "Cuidado especializado para gestantes e crianças, garantindo o melhor desenvolvimento nutricional desde o início da vida.",
+      description: "Acompanhamento para gestantes e crianças.",
       image: "https://images.unsplash.com/photo-1531983412531-1f49a365ffed?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     },
     {
       name: "Programas Premium",
-      description: "Acompanhamento intensivo com bioimpedância e suporte prioritário para quem busca resultados acelerados e monitorados.",
+      description: "Suporte VIP com bioimpedância e monitoramento.",
       image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     }
   ];
@@ -462,12 +462,15 @@ export default function App() {
                 <p className="text-base md:text-2xl text-white/80 mb-8 md:mb-12 leading-relaxed max-w-2xl font-light">
                   Abandone as dietas temporárias. Domine seu metabolismo com uma estratégia personalizada baseada em genética, comportamento e alta performance.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
+                <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mt-10">
                   <motion.a 
                     href="https://wa.me/5511992876219" 
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 1, duration: 0.5 }}
                     whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(121, 159, 12, 0.6)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="relative bg-primary text-white px-8 md:px-10 py-4 md:py-6 rounded-full font-bold text-base md:text-lg transition-colors flex items-center justify-center gap-3 group shadow-xl shadow-primary/40 overflow-hidden"
+                    className="relative bg-primary text-white px-8 md:px-10 py-5 md:py-6 rounded-full font-black uppercase tracking-widest text-sm md:text-lg transition-all flex items-center justify-center gap-3 group shadow-2xl shadow-primary/40 overflow-hidden z-50"
                   >
                     {/* Shine effect */}
                     <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shine" />
@@ -477,9 +480,12 @@ export default function App() {
                   </motion.a>
                   <motion.a 
                     href="#servicos" 
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 1.2, duration: 0.5 }}
                     whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(255, 255, 255, 0.15)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="bg-white/5 backdrop-blur-xl text-white border border-white/20 px-8 md:px-10 py-4 md:py-6 rounded-full font-bold text-base md:text-lg hover:bg-white hover:text-secondary transition-colors flex items-center justify-center gap-2"
+                    className="bg-white/10 backdrop-blur-xl text-white border border-white/20 px-8 md:px-10 py-5 md:py-6 rounded-full font-black uppercase tracking-widest text-sm md:text-lg hover:bg-white hover:text-secondary transition-all flex items-center justify-center gap-2 z-50"
                   >
                     Nossos Serviços
                   </motion.a>
