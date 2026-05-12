@@ -419,7 +419,7 @@ export default function App() {
       <Header onNavClick={handleGlobalNavClick} />
 
       {/* Hero Section */}
-          <section id="inicio" className="relative h-[65vh] min-h-[450px] md:h-screen flex flex-col pt-28 md:pt-32 pb-12 md:pb-20 overflow-hidden">
+          <section id="inicio" className="relative min-h-[600px] md:h-screen flex flex-col pt-28 md:pt-32 pb-12 md:pb-20 overflow-hidden">
               <div className="absolute inset-0 z-0">
                 <picture>
                   <source 
@@ -462,12 +462,12 @@ export default function App() {
                 <p className="text-base md:text-2xl text-white/80 mb-8 md:mb-12 leading-relaxed max-w-2xl font-light">
                   Abandone as dietas temporárias. Domine seu metabolismo com uma estratégia personalizada baseada em genética, comportamento e alta performance.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mt-10">
+                <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mt-8 md:mt-12">
                   <motion.a 
                     href="https://wa.me/5511992876219" 
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 1, duration: 0.5 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
                     whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(121, 159, 12, 0.6)" }}
                     whileTap={{ scale: 0.98 }}
                     className="relative bg-primary text-white px-8 md:px-10 py-5 md:py-6 rounded-full font-black uppercase tracking-widest text-sm md:text-lg transition-all flex items-center justify-center gap-3 group shadow-2xl shadow-primary/40 overflow-hidden z-50"
@@ -480,9 +480,9 @@ export default function App() {
                   </motion.a>
                   <motion.a 
                     href="#servicos" 
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 1.2, duration: 0.5 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
                     whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(255, 255, 255, 0.15)" }}
                     whileTap={{ scale: 0.98 }}
                     className="bg-white/10 backdrop-blur-xl text-white border border-white/20 px-8 md:px-10 py-5 md:py-6 rounded-full font-black uppercase tracking-widest text-sm md:text-lg hover:bg-white hover:text-secondary transition-all flex items-center justify-center gap-2 z-50"
@@ -611,6 +611,33 @@ export default function App() {
                     </div>
                     <h3 className="text-lg md:text-xl font-bold text-secondary mb-2 md:mb-4">{item.title}</h3>
                     <p className="text-gray-500 text-xs md:text-sm leading-relaxed">{item.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Success Stats - Authority Builder */}
+          <section className="pb-12 md:pb-20 bg-light-bg">
+            <div className="container mx-auto px-4 md:px-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                {[
+                  { n: "+10.000", t: "Vidas Transformadas", d: "Resultados comprovados" },
+                  { n: "15", t: "Anos de Expertise", d: "Experiência clínica sólida" },
+                  { n: "98%", t: "Taxa de Satisfação", d: "Pacientes fidelizados" },
+                  { n: "+20kg", t: "Média de Perda", d: "Casos de obesidade" }
+                ].map((stat, idx) => (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="text-center p-6 md:p-8 bg-white rounded-3xl shadow-xl shadow-gray-100 border border-gray-50 group hover:border-primary/20 transition-all"
+                  >
+                    <div className="text-3xl md:text-5xl font-serif font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-500">{stat.n}</div>
+                    <div className="text-secondary font-bold text-[10px] md:text-sm uppercase tracking-widest mb-1">{stat.t}</div>
+                    <div className="text-gray-400 text-[8px] md:text-xs">{stat.d}</div>
                   </motion.div>
                 ))}
               </div>
