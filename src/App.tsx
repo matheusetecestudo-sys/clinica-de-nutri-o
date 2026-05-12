@@ -472,10 +472,8 @@ export default function App() {
                     whileTap={{ scale: 0.98 }}
                     className="bg-primary text-white px-8 md:px-12 py-5 md:py-6 rounded-full font-black uppercase tracking-widest text-sm md:text-lg transition-all flex items-center justify-center gap-3 group shadow-2xl shadow-primary/40 overflow-hidden"
                   >
-                    {/* Shine effect */}
                     <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shine" />
-                    
-                    Solicitar Orçamento
+                    Agendar Consulta VIP
                     <ArrowRight size={20} className="md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
                   </motion.a>
                   <motion.a 
@@ -483,9 +481,9 @@ export default function App() {
                     onClick={(e) => handleGlobalNavClick(e, "#servicos")}
                     whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(255, 255, 255, 0.15)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="bg-white/10 backdrop-blur-xl text-white border border-white/30 px-8 md:px-12 py-5 md:py-6 rounded-full font-black uppercase tracking-widest text-sm md:text-lg hover:bg-white hover:text-secondary transition-all flex items-center justify-center gap-2"
+                    className="bg-white/10 backdrop-blur-xl text-white border border-white/30 px-8 md:px-12 py-5 md:py-6 rounded-full font-black uppercase tracking-widest text-sm md:text-lg hover:bg-white hover:text-secondary transition-all flex items-center justify-center"
                   >
-                    Nossos Serviços
+                    Ver Programas
                   </motion.a>
                 </div>
               </motion.div>
@@ -741,7 +739,7 @@ export default function App() {
                       <img 
                         src={result.image} 
                         alt={`Resultado real - ${result.name}`}
-                        className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110 opacity-90 group-hover:opacity-100"
+                        className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
                         referrerPolicy="no-referrer"
                         loading="lazy"
                       />
@@ -751,18 +749,12 @@ export default function App() {
                         <div className="bg-primary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">
                           -{result.lost} Eliminados
                         </div>
-                        <div className="bg-white/90 backdrop-blur-md text-secondary px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">
-                          Resultado Real
-                        </div>
                       </div>
 
-                      <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500 p-10 flex flex-col justify-end backdrop-blur-[2px]">
+                      <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/10 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 p-10 flex flex-col justify-end">
                         <div className="text-white drop-shadow-2xl translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                           <div className="text-3xl font-serif font-bold mb-2">{result.name}</div>
-                          <div className="text-primary font-bold text-sm mb-6 uppercase tracking-[0.2em]">{result.age} Anos • Foco em Saúde</div>
-                          <p className="text-gray-200 text-sm leading-relaxed italic border-l-2 border-primary pl-4 py-1">
-                            "O método DUNO superou todas as minhas expectativas. Recuperei minha autoestima e vitalidade."
-                          </p>
+                          <div className="text-primary font-bold text-sm mb-4 uppercase tracking-[0.2em]">{result.age} Anos • Foco em Saúde</div>
                         </div>
                       </div>
                     </motion.div>
@@ -831,10 +823,9 @@ export default function App() {
                     className="inline-flex flex-col items-center group gap-4"
                   >
                     <div className="bg-secondary text-white px-10 py-6 rounded-[24px] font-black uppercase tracking-[0.2em] text-sm group-hover:bg-primary transition-all duration-500 shadow-2xl flex items-center gap-4">
-                      Seja a nossa próxima transformação
+                      Quero ser a próxima transformação
                       <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                     </div>
-                    <span className="text-gray-400 text-xs font-bold uppercase tracking-widest">Clique e agende seu diagnóstico</span>
                   </a>
                 </motion.div>
               </div>
@@ -1081,7 +1072,7 @@ export default function App() {
                     href="https://wa.me/5511992876219" 
                     className="flex bg-secondary text-white p-6 rounded-[24px] font-black uppercase tracking-[0.2em] text-sm hover:bg-primary transition-all duration-500 shadow-2xl items-center justify-center gap-4 group"
                   >
-                    Iniciar Protocolo VIP
+                    Agendar Protocolo VIP
                     <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                   </a>
                 </motion.div>
@@ -1111,8 +1102,38 @@ export default function App() {
                 </motion.div>
               </div>
             </div>
+          {/* Instagram Section - Fixed to 4 images */}
+          <section className="py-12 md:py-20 bg-white">
+            <div className="container mx-auto px-6">
+              <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
+                <div>
+                  <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Lifestyle & Saúde</span>
+                  <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">Acompanhe no <span className="text-primary italic">Instagram</span></h2>
+                </div>
+                <a href="https://instagram.com" target="_blank" className="bg-secondary text-white px-8 py-4 rounded-2xl font-bold hover:bg-primary transition-all shadow-xl">@lucianadunonutri</a>
+              </div>
+              
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                {[
+                  "https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format,compress&fit=crop&q=80&w=600",
+                  "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format,compress&fit=crop&q=80&w=600",
+                  "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format,compress&fit=crop&q=80&w=600",
+                  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format,compress&fit=crop&q=80&w=600"
+                ].map((img, i) => (
+                  <motion.div 
+                    key={i}
+                    whileHover={{ y: -10 }}
+                    className="aspect-square rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl border border-gray-100 group relative"
+                  >
+                    <img src={img} alt="Instagram feed" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <Instagram className="text-white w-8 h-8" />
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </section>
-
 
           {/* Footer */}
           <motion.footer 
