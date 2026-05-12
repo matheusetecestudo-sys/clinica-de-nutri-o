@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Quote, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Quote, Star, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -41,102 +41,112 @@ const Testimonials = () => {
 
   return (
     <div className="relative">
-      {/* Desktop Grid */}
-      <div className="hidden md:grid md:grid-cols-3 gap-6 md:gap-8">
+      {/* Desktop Grid - High End Editorial */}
+      <div className="hidden md:grid md:grid-cols-3 gap-8 lg:gap-12">
         {testimonials.slice(0, 3).map((t, index) => (
           <motion.div 
             key={index}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            className="bg-white p-8 md:p-10 rounded-[32px] md:rounded-[40px] shadow-xl shadow-gray-100 border-2 border-primary/20 hover:border-primary transition-all duration-500 flex flex-col relative"
+            transition={{ duration: 0.8, delay: index * 0.2 }}
+            className="bg-white p-10 lg:p-12 rounded-[48px] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border-2 border-primary/5 hover:border-primary transition-all duration-700 flex flex-col relative group"
           >
-            <div className="absolute top-8 right-8 md:top-10 md:right-10 text-primary/10">
-              <Quote size={40} className="md:w-12 md:h-12" />
+            <div className="absolute -top-6 left-12 w-12 h-12 bg-primary text-white rounded-2xl flex items-center justify-center shadow-xl shadow-primary/20 rotate-12 group-hover:rotate-0 transition-transform duration-500">
+              <Quote size={24} />
             </div>
             
-            <div className="flex gap-1 mb-4 md:mb-6">
+            <div className="flex gap-1 mb-8">
               {[...Array(t.rating)].map((_, i) => (
-                <Star key={i} size={14} className="fill-accent text-accent md:w-4 md:h-4" />
+                <Star key={i} size={16} className="fill-accent text-accent" />
               ))}
             </div>
 
-            <p className="text-gray-600 italic leading-relaxed mb-8 md:mb-10 flex-grow text-sm md:text-base">
+            <p className="text-secondary font-serif italic text-lg leading-relaxed mb-10 flex-grow">
               "{t.text}"
             </p>
 
-            <div className="flex items-center gap-4 border-t border-gray-100 pt-6 md:pt-8">
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden shadow-lg border-2 border-white">
-                <img src={t.image} alt={t.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" loading="lazy" />
+            <div className="flex items-center gap-5 border-t border-gray-50 pt-8">
+              <div className="relative">
+                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-full overflow-hidden shadow-2xl border-2 border-white ring-4 ring-primary/5">
+                  <img src={t.image} alt={t.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" loading="lazy" />
+                </div>
+                <div className="absolute -bottom-1 -right-1 bg-[#25D366] text-white w-6 h-6 rounded-full flex items-center justify-center border-2 border-white">
+                  <CheckCircle2 size={12} fill="white" className="text-[#25D366]" />
+                </div>
               </div>
               <div>
-                <div className="font-bold text-secondary text-sm md:text-base">{t.name}</div>
-                <div className="text-[10px] md:text-xs text-gray-400 font-medium uppercase tracking-widest">{t.role}</div>
+                <div className="font-bold text-secondary text-base lg:text-lg mb-0.5">{t.name}</div>
+                <div className="text-[10px] lg:text-xs text-primary font-black uppercase tracking-[0.2em]">{t.role} • Verificado</div>
               </div>
             </div>
           </motion.div>
         ))}
       </div>
 
-      {/* Mobile Carousel */}
+      {/* Mobile Carousel - Premium Experience */}
       <div className="md:hidden relative px-4">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeIndex}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.3 }}
-            className="bg-white p-6 rounded-[24px] shadow-xl border-2 border-primary/30 flex flex-col relative"
+            initial={{ opacity: 0, scale: 0.9, x: 50 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            exit={{ opacity: 0, scale: 0.9, x: -50 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="bg-white p-8 rounded-[40px] shadow-2xl border-2 border-primary/20 flex flex-col relative"
           >
-             <div className="absolute top-6 right-6 text-primary/10">
-              <Quote size={32} />
+             <div className="absolute -top-4 left-8 w-10 h-10 bg-primary text-white rounded-xl flex items-center justify-center shadow-lg">
+              <Quote size={20} />
             </div>
             
-            <div className="flex gap-1 mb-4">
+            <div className="flex gap-1 mb-6">
               {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
-                <Star key={i} size={12} className="fill-accent text-accent" />
+                <Star key={i} size={14} className="fill-accent text-accent" />
               ))}
             </div>
 
-            <p className="text-gray-600 italic leading-relaxed mb-6 flex-grow text-xs line-clamp-4">
+            <p className="text-secondary font-serif italic text-base leading-relaxed mb-8 flex-grow">
               "{testimonials[activeIndex].text}"
             </p>
 
-            <div className="flex items-center gap-3 border-t border-gray-100 pt-4">
-              <div className="w-10 h-10 rounded-full overflow-hidden shadow-md border-2 border-white">
-                <img src={testimonials[activeIndex].image} alt={testimonials[activeIndex].name} className="w-full h-full object-cover" />
+            <div className="flex items-center gap-4 border-t border-gray-50 pt-6">
+              <div className="relative">
+                <div className="w-12 h-12 rounded-full overflow-hidden shadow-xl border-2 border-white ring-4 ring-primary/5">
+                  <img src={testimonials[activeIndex].image} alt={testimonials[activeIndex].name} className="w-full h-full object-cover" />
+                </div>
+                <div className="absolute -bottom-1 -right-1 bg-[#25D366] text-white w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">
+                  <CheckCircle2 size={10} fill="white" className="text-[#25D366]" />
+                </div>
               </div>
               <div>
-                <div className="font-bold text-secondary text-xs">{testimonials[activeIndex].name}</div>
-                <div className="text-[8px] text-gray-400 font-medium uppercase tracking-widest">{testimonials[activeIndex].role}</div>
+                <div className="font-bold text-secondary text-sm">{testimonials[activeIndex].name}</div>
+                <div className="text-[9px] text-primary font-black uppercase tracking-widest">{testimonials[activeIndex].role}</div>
               </div>
             </div>
           </motion.div>
         </AnimatePresence>
 
-        {/* Carousel Controls */}
-        <div className="flex items-center justify-center gap-6 mt-8">
+        {/* Carousel Controls - Larger & More Intutive */}
+        <div className="flex items-center justify-center gap-8 mt-10">
           <button 
             onClick={prev}
-            className="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-primary active:bg-primary active:text-white transition-all"
+            className="w-14 h-14 rounded-full bg-white border-2 border-primary/10 flex items-center justify-center text-primary shadow-xl active:bg-primary active:text-white transition-all"
           >
-            <ChevronLeft size={20} />
+            <ChevronLeft size={28} />
           </button>
-          <div className="flex gap-1.5">
+          <div className="flex gap-2">
             {testimonials.map((_, i) => (
               <div 
                 key={i} 
-                className={`w-2 h-2 rounded-full transition-all ${i === activeIndex ? "bg-primary w-4" : "bg-gray-200"}`}
+                className={`h-2 rounded-full transition-all duration-500 ${i === activeIndex ? "bg-primary w-8" : "bg-gray-200 w-2"}`}
               />
             ))}
           </div>
           <button 
             onClick={next}
-            className="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-primary active:bg-primary active:text-white transition-all"
+            className="w-14 h-14 rounded-full bg-white border-2 border-primary/10 flex items-center justify-center text-primary shadow-xl active:bg-primary active:text-white transition-all"
           >
-            <ChevronRight size={20} />
+            <ChevronRight size={28} />
           </button>
         </div>
       </div>
