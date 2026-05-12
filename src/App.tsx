@@ -326,44 +326,28 @@ export default function App() {
 
   const servicesList = [
     {
-      name: "Emagrecimento Definitivo",
-      description: "Emagrecimento sustentável sem restrições severas.",
-      image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
+      title: "Emagrecimento High-End",
+      description: "Domine seu metabolismo e elimine gordura de forma definitiva através da ciência da reprogramação hormonal.",
+      icon: <Target className="w-8 h-8" />,
+      features: ["Diagnóstico Metabólico", "Plano Anti-Inflamatório", "Suporte VIP"]
     },
     {
-      name: "Performance Esportiva",
-      description: "Estratégias de alto rendimento para seus treinos.",
-      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
+      title: "Performance & Hipertrofia",
+      description: "Acelere seus ganhos de massa muscular com estratégias nutricionais utilizadas por atletas de alto rendimento.",
+      icon: <Zap className="w-8 h-8" />,
+      features: ["Periodização Nutricional", "Suplementação de Elite", "Ajustes de Carga"]
     },
     {
-      name: "Saúde e Longevidade",
-      description: "Prevenção e imunidade com densidade nutritiva.",
-      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
+      title: "Longevidade & Saúde",
+      description: "Recupere sua vitalidade e equilíbrio interno. Nutrição funcional focada em reverter o envelhecimento celular.",
+      icon: <Activity className="w-8 h-8" />,
+      features: ["Bioindividualidade", "Modulação Intestinal", "Detox Sistêmico"]
     },
     {
-      name: "Nutrição Comportamental",
-      description: "Comer consciente, sem dietas e ansiedade.",
-      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
-    },
-    {
-      name: "Saúde Gastrointestinal",
-      description: "Tratamento focado em digestão e saúde intestinal.",
-      image: "https://images.unsplash.com/photo-1476224483472-18cfa58b6ad1?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
-    },
-    {
-      name: "Nutrição Estética",
-      description: "Nutrição para pele, cabelos e beleza real.",
-      image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
-    },
-    {
-      name: "Nutrição Materno-Infantil",
-      description: "Acompanhamento para gestantes e crianças.",
-      image: "https://images.unsplash.com/photo-1531983412531-1f49a365ffed?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
-    },
-    {
-      name: "Programas Premium",
-      description: "Suporte VIP com bioimpedância e monitoramento.",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
+      title: "Acompanhamento Global",
+      description: "A mesma excelência clínica em qualquer lugar do mundo. Consultas online e suporte 24/7 via app.",
+      icon: <Users className="w-8 h-8" />,
+      features: ["Suporte via WhatsApp", "Plano Digital", "Consultas em Vídeo"]
     }
   ];
 
@@ -412,7 +396,6 @@ export default function App() {
 
   return (
     <div className="relative overflow-x-hidden bg-white">
-      {/* Decorative Background Elements */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
         <div className="absolute top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px]" />
         <div className="absolute bottom-[20%] -right-[10%] w-[35%] h-[35%] bg-accent/5 rounded-full blur-[100px]" />
@@ -421,7 +404,6 @@ export default function App() {
 
       <Header onNavClick={handleGlobalNavClick} />
 
-      {/* Hero Section */}
           <section id="inicio" className="relative min-h-[600px] md:min-h-screen flex flex-col pt-28 md:pt-32 pb-12 md:pb-20">
               <div className="absolute inset-0 z-0">
                 <picture>
@@ -460,10 +442,10 @@ export default function App() {
                   </span>
                 </motion.div>
                 <h1 className="text-4xl md:text-7xl lg:text-8xl font-serif font-bold text-white leading-[0.95] md:leading-[0.9] mb-6 md:mb-8 tracking-tighter drop-shadow-2xl">
-                  A ciência da <span className="text-primary italic">transformação</span> definitiva.
+                  Domine sua <span className="text-primary italic">biologia</span>. Transforme sua vida.
                 </h1>
                 <p className="text-base md:text-2xl text-white/90 mb-8 md:mb-12 leading-relaxed max-w-2xl font-light drop-shadow-lg">
-                  Abandone as dietas temporárias. Domine seu metabolismo com uma estratégia personalizada baseada em genética, comportamento e alta performance.
+                  Esqueça as dietas genéricas. Desenvolvemos estratégias de elite baseadas em precisão genética e reprogramação metabólica para resultados permanentes.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mt-8 md:mt-12 relative z-50">
                   <motion.a 
@@ -537,15 +519,15 @@ export default function App() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Autoridade Médica</span>
-                  <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 md:mb-8 leading-tight">
-                    Expertise clínica focada em <span className="text-primary italic">resultados extraordinários</span>.
+                  <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Autoridade Médica & Científica</span>
+                  <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 md:mb-8 leading-tight text-secondary">
+                    Reprogramação Biológica: O fim do <span className="text-primary italic">efeito sanfona</span>.
                   </h2>
                   <p className="text-base md:text-lg text-gray-600 mb-4 md:mb-6 leading-relaxed">
-                    A <strong>Dra. Luciana Duno</strong> é referência nacional em emagrecimento sustentável. Com mais de 15 anos de atuação, ela desenvolveu um método exclusivo que une precisão diagnóstica e acolhimento humano.
+                    A <strong>Dra. Luciana Duno</strong> não entrega apenas planos alimentares; ela projeta novas realidades biológicas. Com 15 anos de expertise clínica, seu método é a união definitiva entre alta tecnologia diagnóstica e nutrição comportamental humanizada.
                   </p>
                   <p className="text-base md:text-lg text-gray-600 mb-8 md:mb-10 leading-relaxed">
-                    Não entregamos apenas dietas; entregamos a liberdade de viver em seu melhor corpo. Nossa abordagem elimina o efeito sanfona através do equilíbrio hormonal e reprogramação metabólica.
+                    Nossa missão é devolver a você o controle total sobre o seu corpo. Através da modulação hormonal e otimização enzimática, garantimos que sua jornada seja sustentável, prazerosa e, acima de tudo, extraordinária.
                   </p>
                   
                   <div className="flex mb-12">
@@ -959,10 +941,10 @@ export default function App() {
                 <div className="absolute top-1/4 left-0 w-full h-[1px] bg-gray-100 hidden md:block -z-0" />
                 
                 {[
-                  { t: "Diagnóstico", d: "Avaliação completa de exames, bioimpedância e rotina atual.", n: "01" },
-                  { t: "Estratégia", d: "Criação do seu plano alimentar exclusivo e personalizado.", n: "02" },
-                  { t: "Implementação", d: "Acesso ao app de suporte e início da reprogramação metabólica.", n: "03" },
-                  { t: "Consolidação", d: "Ajustes constantes para garantir que o resultado seja definitivo.", n: "04" }
+                  { t: "Mapeamento", d: "Avaliação profunda de bioimpedância, exames e rotina biológica.", n: "01" },
+                  { t: "Estratégia Elite", d: "Criação do seu protocolo exclusivo focado em reprogramação metabólica.", n: "02" },
+                  { t: "Fase Ativa", d: "Acesso ao app e início da modulação hormonal via alimentação.", n: "03" },
+                  { t: "Domínio", d: "Ajustes de alta performance para consolidação do novo peso definitivo.", n: "04" }
                 ].map((step, idx) => (
                   <motion.div 
                     key={idx}
