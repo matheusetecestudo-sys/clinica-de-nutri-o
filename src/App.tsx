@@ -206,17 +206,17 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
       </div>
 
       {/* Content Block Below - Compact padding */}
-      <div className="p-6 md:p-8 flex flex-col flex-grow">
+      <div className="p-6 md:p-8 flex flex-col flex-grow items-center text-center">
         <h3 className="text-xl md:text-2xl font-serif font-bold text-secondary mb-3 leading-tight group-hover:text-primary transition-colors">
           {service.name}
         </h3>
         
-        <p className="text-gray-500 text-[11px] md:text-sm leading-relaxed mb-4 flex-grow">
+        <p className="text-gray-500 text-[11px] md:text-sm leading-relaxed mb-4 flex-grow max-w-[240px]">
           {service.description}
         </p>
         
         {/* Footer Section - Simplified */}
-        <div className="pt-5 border-t border-gray-50 flex items-center justify-between mt-auto">
+        <div className="pt-5 border-t border-gray-50 flex items-center justify-between mt-auto w-full">
           <a 
             href={`https://wa.me/5511992876219?text=Olá! Gostaria de saber mais sobre o ${service.name}`}
             target="_blank"
@@ -768,8 +768,8 @@ export default function App() {
                   ))}
                 </div>
 
-                {/* Mobile Carousel */}
-                <div className="md:hidden relative px-2 mb-12">
+                {/* Mobile Carousel - More compact */}
+                <div className="md:hidden relative px-2 mb-8">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={activeResultIndex}
@@ -777,15 +777,15 @@ export default function App() {
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
                       transition={{ duration: 0.5, ease: "easeOut" }}
-                      className="relative rounded-[40px] overflow-hidden aspect-[4/6] shadow-2xl border-2 border-primary/30 bg-secondary"
+                      className="relative bg-secondary rounded-[24px] overflow-hidden shadow-xl aspect-[4/5]"
                     >
                       <img 
                         src={results[activeResultIndex].image} 
                         alt={results[activeResultIndex].name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover opacity-90"
                       />
                       
-                      <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/40 to-transparent p-10 flex flex-col justify-end">
+                      <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/40 to-transparent p-6 flex flex-col justify-end">
                         <div className="text-white drop-shadow-xl">
                           <div className="bg-primary text-white inline-block px-4 py-2 rounded-xl text-lg font-black mb-4 shadow-xl">
                             -{results[activeResultIndex].lost}
