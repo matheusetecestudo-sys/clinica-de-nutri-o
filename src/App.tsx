@@ -464,17 +464,17 @@ export default function App() {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(121, 159, 12, 0.4)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="bg-primary text-white px-7 py-3 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs transition-all flex items-center justify-center gap-2 group shadow-xl shadow-primary/20 overflow-hidden whitespace-nowrap"
+                    className="bg-primary text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs md:text-sm transition-all flex items-center justify-center gap-3 group shadow-2xl shadow-primary/40 overflow-hidden whitespace-nowrap"
                   >
                     Agendar Consulta VIP
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                   </motion.a>
                   <motion.a 
                     href="#servicos" 
                     onClick={(e) => handleGlobalNavClick(e, "#servicos")}
                     whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(255, 255, 255, 0.1)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="bg-white/10 backdrop-blur-xl text-white border border-white/20 px-7 py-3 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-white hover:text-secondary transition-all flex items-center justify-center whitespace-nowrap"
+                    className="bg-white/10 backdrop-blur-xl text-white border border-white/20 px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs md:text-sm hover:bg-white hover:text-secondary transition-all flex items-center justify-center whitespace-nowrap"
                   >
                     Ver Programas
                   </motion.a>
@@ -1079,9 +1079,9 @@ export default function App() {
                   </div>
 
                   <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6 justify-center md:justify-start">
-                    <a href="https://wa.me/5511992876219?text=Olá! Gostaria de agendar uma consulta VIP." target="_blank" className="w-full sm:w-auto bg-primary text-white px-7 py-3 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-secondary transition-all flex items-center justify-center gap-2 group shadow-xl shadow-primary/20 whitespace-nowrap">
+                    <a href="https://wa.me/5511992876219?text=Olá! Gostaria de agendar uma consulta VIP." target="_blank" className="w-full sm:w-auto bg-primary text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs md:text-sm hover:bg-secondary transition-all flex items-center justify-center gap-3 group shadow-2xl shadow-primary/20 whitespace-nowrap">
                       Agendar Consulta VIP
-                      <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                     </a>
                   </div>
                 </motion.div>
@@ -1132,15 +1132,17 @@ export default function App() {
                   <p className="text-gray-400 text-sm leading-relaxed mb-8">
                     Especializada em emagrecimento saudável e performance humana. Transformando vidas através da nutrição consciente e baseada em evidências.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
-                      <a href="https://wa.me/5511992876219" target="_blank" className="bg-white text-primary px-7 py-3 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-secondary hover:text-white transition-all flex items-center justify-center gap-2 group shadow-xl whitespace-nowrap">
-                        Agendar via WhatsApp
-                        <MessageSquare size={16} className="group-hover:scale-110 transition-transform" />
-                      </a>
-                      <a href="tel:+5511992876219" className="bg-transparent text-white border-2 border-white/30 px-7 py-3 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-white hover:text-primary transition-all flex items-center justify-center whitespace-nowrap">
-                        Ligar Agora
-                      </a>
-                    </div>
+                  <div className="flex gap-4">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary transition-all border border-white/10">
+                      <Instagram size={20} />
+                    </a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary transition-all border border-white/10">
+                      <Facebook size={20} />
+                    </a>
+                    <a href="https://wa.me/5511992876219" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-[#25D366] transition-all border border-white/10">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-5 h-5" />
+                    </a>
+                  </div>
                 </div>
 
                 <div>
