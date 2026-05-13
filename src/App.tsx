@@ -1099,15 +1099,15 @@ export default function App() {
                     <InteractiveMap />
                   </Suspense>
                   
-                  {/* Floating Social Badge */}
-                  <div className="absolute bottom-8 left-8 right-8 bg-white/80 backdrop-blur-xl p-4 rounded-3xl border border-white/20 shadow-2xl flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
-                        <Instagram size={20} />
+                  {/* Floating Social Badge - Optimized for Mobile */}
+                  <div className="absolute bottom-4 md:bottom-8 left-4 md:left-8 right-4 md:right-8 bg-white/90 backdrop-blur-xl p-3 md:p-4 rounded-2xl md:rounded-3xl border border-white/20 shadow-2xl flex items-center justify-between z-30">
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <div className="w-8 h-8 md:w-10 md:h-10 bg-primary rounded-full flex items-center justify-center text-white shrink-0">
+                        <Instagram size={18} className="md:w-5 md:h-5" />
                       </div>
-                      <div className="text-secondary font-bold text-xs uppercase tracking-widest">@lucianadunonutri</div>
+                      <div className="text-secondary font-black text-[9px] md:text-xs uppercase tracking-widest truncate max-w-[120px] md:max-w-none">@lucianadunonutri</div>
                     </div>
-                    <a href="https://instagram.com" target="_blank" className="bg-secondary text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-primary transition-colors">Seguir</a>
+                    <a href="https://instagram.com" target="_blank" className="bg-secondary text-white px-3 md:px-4 py-2 rounded-lg md:rounded-xl text-[8px] md:text-[10px] font-black uppercase tracking-widest hover:bg-primary transition-colors shrink-0">Seguir</a>
                   </div>
                 </motion.div>
               </div>

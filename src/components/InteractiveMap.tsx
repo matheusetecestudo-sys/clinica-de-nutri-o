@@ -28,40 +28,54 @@ const center = {
 
 const LeafletMap = () => {
   return (
-    <MapContainer 
-      center={[center.lat, center.lng]} 
-      zoom={16} 
-      style={containerStyle}
-      scrollWheelZoom={false}
-      className="z-0"
-    >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <LeafletMarker position={[center.lat, center.lng]}>
-        <Popup>
-          <div className="p-1 min-w-[180px] font-sans">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              <h3 className="font-bold text-secondary text-sm">DUNO Nutri</h3>
+    <div className="w-full h-full relative group">
+      <MapContainer 
+        center={[center.lat, center.lng]} 
+        zoom={16} 
+        style={containerStyle}
+        scrollWheelZoom={false}
+        className="z-0 leaflet-noir"
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <LeafletMarker position={[center.lat, center.lng]}>
+          <Popup>
+            <div className="p-1 min-w-[180px] font-sans">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                <h3 className="font-bold text-secondary text-sm">DUNO Nutri</h3>
+              </div>
+              <p className="text-[11px] text-gray-500 mb-2 leading-relaxed">
+                Av. Paulista, 1000 - Sala 1205<br />
+                Bela Vista, São Paulo - SP
+              </p>
+              <a 
+                href="https://www.google.com/maps/dir/?api=1&destination=-23.56134967880004,-46.65889022466981" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary text-[11px] font-bold hover:underline"
+              >
+                Como chegar
+              </a>
             </div>
-            <p className="text-[11px] text-gray-500 mb-2 leading-relaxed">
-              Av. Paulista, 1000 - Sala 1205<br />
-              Bela Vista, São Paulo - SP
-            </p>
-            <a 
-              href="https://www.google.com/maps/dir/?api=1&destination=-23.56134967880004,-46.65889022466981" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-primary text-[11px] font-bold hover:underline"
-            >
-              Como chegar
-            </a>
-          </div>
-        </Popup>
-      </LeafletMarker>
-    </MapContainer>
+          </Popup>
+        </LeafletMarker>
+      </MapContainer>
+      
+      {/* Visual Overlay to refine the Noir look */}
+      <div className="absolute inset-0 pointer-events-none bg-primary/5 mix-blend-multiply z-10" />
+      
+      <style>{`
+        .leaflet-noir {
+          filter: grayscale(100%) invert(90%) contrast(90%) brightness(110%);
+        }
+        .leaflet-tile-pane {
+          filter: brightness(0.8) contrast(1.2);
+        }
+      `}</style>
+    </div>
   );
 };
 
