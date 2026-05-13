@@ -501,7 +501,7 @@ export default function App() {
                   whileInView={{ opacity: 1, scale: 1, x: 0 }}
                   transition={{ duration: 0.8 }}
                   viewport={{ once: true }}
-                  className="relative"
+                  className="relative max-w-[280px] md:max-w-none mx-auto"
                 >
                   <div className="aspect-[4/5] rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl relative z-10">
                     <img 
