@@ -750,7 +750,7 @@ export default function App() {
                       <img 
                         src={result.image} 
                         alt={`Resultado real - ${result.name}`}
-                        className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                        className="w-full h-full object-contain transition-transform duration-[2s] group-hover:scale-105"
                         referrerPolicy="no-referrer"
                         loading="lazy"
                       />
@@ -790,7 +790,7 @@ export default function App() {
                       <img 
                         src={results[activeResultIndex].image} 
                         alt={results[activeResultIndex].name}
-                        className="w-full h-full object-cover opacity-90"
+                        className="w-full h-full object-contain"
                         referrerPolicy="no-referrer"
                       />
                       
