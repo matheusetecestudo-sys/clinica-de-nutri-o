@@ -221,20 +221,16 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
           {service.description}
         </p>
         
-        {/* Footer Section - Simplified */}
-        <div className="pt-5 border-t border-gray-50 flex items-center justify-between mt-auto w-full">
+        {/* Footer Section - Standardized Button */}
+        <div className="pt-6 border-t border-gray-50 flex items-center justify-center mt-auto w-full">
           <a 
             href={`https://wa.me/5511992876219?text=Olá! Gostaria de saber mais sobre o ${service.name}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary font-black uppercase tracking-[0.2em] text-[10px] md:text-xs hover:opacity-70 transition-all"
+            className="bg-primary text-white px-8 py-3 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-secondary transition-all shadow-lg shadow-primary/20"
           >
-            Agendar
+            Saiba mais
           </a>
-          
-          <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-gray-100 flex items-center justify-center text-gray-300 group-hover:border-primary group-hover:text-primary transition-all duration-500">
-            <ArrowRight size={16} />
-          </div>
         </div>
       </div>
     </motion.div>
@@ -1084,9 +1080,9 @@ export default function App() {
 
                   <a 
                     href="https://wa.me/5511992876219" 
-                    className="flex bg-secondary text-white p-6 rounded-[24px] font-black uppercase tracking-[0.2em] text-sm hover:bg-primary transition-all duration-500 shadow-2xl items-center justify-center gap-4 group"
+                    className="bg-primary text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-sm hover:bg-secondary transition-all shadow-xl shadow-primary/20 flex items-center justify-center gap-4 group"
                   >
-                    Agendar Protocolo VIP
+                    Agendar Consulta VIP
                     <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                   </a>
                 </motion.div>
