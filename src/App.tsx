@@ -201,12 +201,12 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
     >
       <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/20 rounded-[32px] transition-all duration-500 pointer-events-none z-20" />
       
-      {/* Top Image Section - Compact & Sharp */}
-      <div className="aspect-[16/9] overflow-hidden relative shrink-0">
+      {/* Top Image Section - Full Visibility */}
+      <div className="aspect-[4/3] overflow-hidden relative shrink-0 bg-gray-50/50">
         <img 
           src={service.image} 
           alt={service.name} 
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-105"
           referrerPolicy="no-referrer"
           loading="lazy"
         />
@@ -380,7 +380,7 @@ export default function App() {
       name: "Juliana F.",
       age: 28,
       lost: "12kg",
-      image: "/images/mulher_2_card.webp",
+      image: "/images/mulher03.png",
       before: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format,compress&fit=crop&q=80&w=400&fm=webp"
     }
   ];
@@ -505,9 +505,9 @@ export default function App() {
                 >
                   <div className="aspect-[4/5] rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl relative z-10">
                     <img 
-                      src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format,compress&fit=crop&q=80&w=800&fm=webp" 
+                      src="/images/doutora.png" 
                       alt="Dra. Luciana Duno - Nutricionista Especialista em Emagrecimento e Saúde"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain bg-gray-50/30"
                       referrerPolicy="no-referrer"
                       loading="lazy"
                       decoding="async"
@@ -789,7 +789,8 @@ export default function App() {
                       <img 
                         src={results[activeResultIndex].image} 
                         alt={results[activeResultIndex].name}
-                        className="w-full h-full object-cover opacity-90"
+                        className="w-full h-full object-contain"
+                        referrerPolicy="no-referrer"
                       />
                       
                       <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/40 to-transparent p-6 flex flex-col justify-end">
