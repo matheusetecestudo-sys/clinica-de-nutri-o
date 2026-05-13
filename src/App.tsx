@@ -32,7 +32,8 @@ import {
   Calendar,
   Star,
   Brain,
-  Dna
+  Dna,
+  MessageSquare
 } from "lucide-react";
 import { motion, AnimatePresence, useInView, useScroll, useTransform } from "motion/react";
 
@@ -461,20 +462,19 @@ export default function App() {
                     href="https://wa.me/5511992876219" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(121, 159, 12, 0.6)" }}
+                    whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(121, 159, 12, 0.4)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="bg-primary text-white px-8 md:px-12 py-5 md:py-6 rounded-full font-black uppercase tracking-widest text-sm md:text-lg transition-all flex items-center justify-center gap-3 group shadow-2xl shadow-primary/40 overflow-hidden"
+                    className="bg-primary text-white px-7 py-3 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs transition-all flex items-center justify-center gap-2 group shadow-xl shadow-primary/20 overflow-hidden whitespace-nowrap"
                   >
-                    <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shine" />
                     Agendar Consulta VIP
-                    <ArrowRight size={20} className="md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </motion.a>
                   <motion.a 
                     href="#servicos" 
                     onClick={(e) => handleGlobalNavClick(e, "#servicos")}
-                    whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(255, 255, 255, 0.15)" }}
+                    whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(255, 255, 255, 0.1)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="bg-white/10 backdrop-blur-xl text-white border border-white/30 px-8 md:px-12 py-5 md:py-6 rounded-full font-black uppercase tracking-widest text-sm md:text-lg hover:bg-white hover:text-secondary transition-all flex items-center justify-center"
+                    className="bg-white/10 backdrop-blur-xl text-white border border-white/20 px-7 py-3 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-white hover:text-secondary transition-all flex items-center justify-center whitespace-nowrap"
                   >
                     Ver Programas
                   </motion.a>
@@ -1079,11 +1079,11 @@ export default function App() {
                   </div>
 
                   <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6 justify-center md:justify-start">
-                  <a href="https://wa.me/5511992876219?text=Olá! Gostaria de agendar uma consulta VIP." target="_blank" className="w-full sm:w-auto bg-primary text-white px-7 py-3 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-secondary transition-all flex items-center justify-center gap-2 group shadow-xl shadow-primary/20 whitespace-nowrap">
-                    Agendar Consulta VIP
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                  </a>
-                </div>
+                    <a href="https://wa.me/5511992876219?text=Olá! Gostaria de agendar uma consulta VIP." target="_blank" className="w-full sm:w-auto bg-primary text-white px-7 py-3 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-secondary transition-all flex items-center justify-center gap-2 group shadow-xl shadow-primary/20 whitespace-nowrap">
+                      Agendar Consulta VIP
+                      <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
                 </motion.div>
 
                 {/* Map Container */}
