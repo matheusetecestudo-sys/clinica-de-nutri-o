@@ -196,7 +196,7 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
         y: -10,
         boxShadow: "0 30px 60px -15px rgba(5, 150, 105, 0.25)"
       }}
-      className="group bg-white rounded-[32px] overflow-hidden flex flex-col shadow-lg border border-gray-100 transition-all duration-500 relative"
+      className="group bg-white rounded-[32px] overflow-hidden flex flex-col shadow-lg border border-gray-100 transition-all duration-500 relative h-full"
     >
       <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/20 rounded-[32px] transition-all duration-500 pointer-events-none z-20" />
       
@@ -211,15 +211,17 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
         />
       </div>
 
-      {/* Content Block Below - Tightly Grouped */}
-      <div className="p-6 md:p-7 flex flex-col items-center text-center">
-        <h3 className="text-lg md:text-xl font-serif font-bold text-secondary mb-2 leading-tight group-hover:text-primary transition-colors">
-          {service.name}
-        </h3>
-        
-        <p className="text-gray-500 text-[10px] md:text-xs leading-relaxed font-medium max-w-[220px] mb-6">
-          {service.description}
-        </p>
+      {/* Content Block Below - Tightly Grouped & Balanced */}
+      <div className="p-6 md:p-7 flex flex-col items-center text-center h-full justify-between">
+        <div className="mb-6">
+          <h3 className="text-lg md:text-xl font-serif font-bold text-secondary mb-2 leading-tight group-hover:text-primary transition-colors">
+            {service.name}
+          </h3>
+          
+          <p className="text-gray-500 text-[10px] md:text-xs leading-relaxed font-medium max-w-[220px]">
+            {service.description}
+          </p>
+        </div>
         
         <a 
           href={`https://wa.me/5511992876219?text=Olá! Gostaria de saber mais sobre o ${service.name}`}
@@ -339,7 +341,7 @@ export default function App() {
     {
       name: "Saúde Gastrointestinal",
       description: "Tratamento focado em digestão e saúde intestinal.",
-      image: "https://images.unsplash.com/photo-1476224483472-18cfa58b6ad1?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
+      image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
     },
     {
       name: "Nutrição Estética",
