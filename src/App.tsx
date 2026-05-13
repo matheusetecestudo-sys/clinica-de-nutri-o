@@ -196,11 +196,11 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
         y: -10,
         boxShadow: "0 30px 60px -15px rgba(5, 150, 105, 0.25)"
       }}
-      className="group bg-white rounded-[32px] overflow-hidden flex flex-col shadow-lg border border-gray-100 transition-all duration-500 relative min-h-[400px] md:min-h-[440px]"
+      className="group bg-white rounded-[32px] overflow-hidden flex flex-col shadow-lg border border-gray-100 transition-all duration-500 relative"
     >
       <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/20 rounded-[32px] transition-all duration-500 pointer-events-none z-20" />
       
-      {/* Top Image Section - More Compact */}
+      {/* Top Image Section - Compact & Sharp */}
       <div className="aspect-[16/9] overflow-hidden relative shrink-0">
         <img 
           src={service.image} 
@@ -211,29 +211,24 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
         />
       </div>
 
-      {/* Content Block Below - Dense & Organized */}
-      <div className="p-5 md:p-6 flex flex-col flex-grow items-center text-center justify-between">
-        <div>
-          <h3 className="text-lg md:text-xl font-serif font-bold text-secondary mb-2 leading-tight group-hover:text-primary transition-colors">
-            {service.name}
-          </h3>
-          
-          <p className="text-gray-500 text-[10px] md:text-xs leading-relaxed font-medium max-w-[220px] mx-auto line-clamp-3">
-            {service.description}
-          </p>
-        </div>
+      {/* Content Block Below - Tightly Grouped */}
+      <div className="p-6 md:p-7 flex flex-col items-center text-center">
+        <h3 className="text-lg md:text-xl font-serif font-bold text-secondary mb-2 leading-tight group-hover:text-primary transition-colors">
+          {service.name}
+        </h3>
         
-        {/* Footer Section - Compact Button */}
-        <div className="pt-4 w-full">
-          <a 
-            href={`https://wa.me/5511992876219?text=Olá! Gostaria de saber mais sobre o ${service.name}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex bg-primary text-white px-6 py-2.5 rounded-full font-black uppercase tracking-widest text-[9px] md:text-[10px] hover:bg-secondary transition-all shadow-lg shadow-primary/20"
-          >
-            Saiba mais
-          </a>
-        </div>
+        <p className="text-gray-500 text-[10px] md:text-xs leading-relaxed font-medium max-w-[220px] mb-6">
+          {service.description}
+        </p>
+        
+        <a 
+          href={`https://wa.me/5511992876219?text=Olá! Gostaria de saber mais sobre o ${service.name}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex bg-primary text-white px-8 py-3 rounded-full font-black uppercase tracking-widest text-[9px] md:text-[10px] hover:bg-secondary transition-all shadow-lg shadow-primary/20"
+        >
+          Saiba mais
+        </a>
       </div>
     </motion.div>
   );
