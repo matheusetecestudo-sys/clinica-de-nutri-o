@@ -261,16 +261,16 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
   };
 
   return (
-    <div ref={itemRef} className="border-b border-gray-100 last:border-0 scroll-mt-32">
+    <div ref={itemRef} className={`transition-all duration-500 rounded-3xl mb-2 scroll-mt-32 ${isOpen ? "bg-gray-50/50 border-l-4 border-primary px-6 shadow-sm" : "border-b border-gray-100 last:border-0 hover:bg-gray-50/30 px-6"}`}>
       <button 
         className="w-full py-6 flex items-center justify-between text-left group"
         onClick={toggleOpen}
       >
-        <h3 className={`text-lg font-semibold transition-colors ${isOpen ? "text-primary" : "text-secondary group-hover:text-primary"}`}>
+        <h3 className={`text-base md:text-lg font-serif font-bold transition-colors ${isOpen ? "text-primary" : "text-secondary group-hover:text-primary"}`}>
           {question}
         </h3>
-        <div className={`transition-transform duration-300 ${isOpen ? "rotate-180 text-primary" : "text-gray-400"}`}>
-          <ChevronDown size={24} />
+        <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen ? "bg-primary text-white rotate-180 shadow-lg shadow-primary/20" : "bg-gray-100 text-gray-400 group-hover:bg-primary/10 group-hover:text-primary"}`}>
+          <ChevronDown size={20} />
         </div>
       </button>
       <AnimatePresence>
@@ -279,9 +279,10 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: "circOut" }}
             className="overflow-hidden"
           >
-            <p className="pb-6 text-gray-500 leading-relaxed">
+            <p className="pb-8 text-gray-500 text-sm md:text-base leading-relaxed max-w-2xl font-medium">
               {answer}
             </p>
           </motion.div>
