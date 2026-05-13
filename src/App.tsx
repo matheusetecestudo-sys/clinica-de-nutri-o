@@ -322,42 +322,42 @@ export default function App() {
     {
       name: "Emagrecimento Definitivo",
       description: "Emagrecimento sustentável sem restrições severas.",
-      image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
+      image: "/images/emagrecimento_definitivo_novo.png"
     },
     {
       name: "Performance Esportiva",
       description: "Estratégias de alto rendimento para seus treinos.",
-      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
+      image: "/images/performance_esportiva.png"
     },
     {
       name: "Saúde e Longevidade",
       description: "Prevenção e imunidade com densidade nutritiva.",
-      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
+      image: "/images/saude_e_longevidade_novo.png"
     },
     {
       name: "Nutrição Comportamental",
       description: "Comer consciente, sem dietas e ansiedade.",
-      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
+      image: "/images/nutricao_comportamental_novo.png"
     },
     {
       name: "Saúde Gastrointestinal",
       description: "Tratamento focado em digestão e saúde intestinal.",
-      image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
+      image: "/images/saude_gastrointestinal_novo.png"
     },
     {
       name: "Nutrição Estética",
       description: "Nutrição para pele, cabelos e beleza real.",
-      image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
+      image: "/images/nutricao_estetica_novo.png"
     },
     {
       name: "Nutrição Materno-Infantil",
       description: "Acompanhamento para gestantes e crianças.",
-      image: "https://images.unsplash.com/photo-1531983412531-1f49a365ffed?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
+      image: "/images/nutricao_materno_infantil_novo.png"
     },
     {
       name: "Programas Premium",
       description: "Suporte VIP com bioimpedância e monitoramento.",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format,compress&fit=crop&q=80&w=800&fm=webp"
+      image: "/images/programas_premium_novo.png"
     }
   ];
 
@@ -366,21 +366,21 @@ export default function App() {
       name: "Mariana S.",
       age: 32,
       lost: "15kg",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
+      image: "/images/mulher_1_card.webp",
       before: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format,compress&fit=crop&q=80&w=400&fm=webp"
     },
     {
       name: "Ricardo M.",
       age: 45,
       lost: "22kg",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
+      image: "/images/homem_card.webp",
       before: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format,compress&fit=crop&q=80&w=400&fm=webp"
     },
     {
       name: "Juliana F.",
       age: 28,
       lost: "12kg",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format,compress&fit=crop&q=80&w=800&fm=webp",
+      image: "/images/mulher_2_card.webp",
       before: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format,compress&fit=crop&q=80&w=400&fm=webp"
     }
   ];
