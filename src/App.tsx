@@ -192,8 +192,13 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group bg-white rounded-[32px] overflow-hidden flex flex-col h-full shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500"
+      whileHover={{ 
+        y: -10,
+        boxShadow: "0 30px 60px -15px rgba(5, 150, 105, 0.25)"
+      }}
+      className="group bg-white rounded-[32px] overflow-hidden flex flex-col h-full shadow-lg border border-gray-100 transition-all duration-500 relative"
     >
+      <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/20 rounded-[32px] transition-all duration-500 pointer-events-none z-20" />
       {/* Top Image Section - More compact */}
       <div className="aspect-[16/9] overflow-hidden relative">
         <img 
@@ -649,11 +654,15 @@ export default function App() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.2 }}
                         viewport={{ once: true }}
-                        className="flex gap-6 p-6 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 group"
+                        className="flex gap-6 p-6 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-primary/30 backdrop-blur-md transition-all duration-500 group"
                       >
-                        <div className="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg shadow-primary/20">
+                        <motion.div 
+                          animate={{ y: [0, -5, 0] }}
+                          transition={{ duration: 4, repeat: Infinity, delay: idx * 0.5, ease: "easeInOut" }}
+                          className="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform"
+                        >
                           {item.i}
-                        </div>
+                        </motion.div>
                         <div>
                           <h4 className="text-white font-bold text-xl mb-2 group-hover:text-primary transition-colors">{item.t}</h4>
                           <p className="text-white/70 text-sm leading-relaxed max-w-md font-medium">{item.d}</p>
@@ -757,7 +766,8 @@ export default function App() {
 
                       <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/20 to-transparent opacity-95 group-hover:opacity-100 transition-opacity duration-500 p-10 flex flex-col justify-end">
                         <div className="text-white drop-shadow-2xl translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                          <div className="bg-primary text-white inline-block px-4 py-2 rounded-xl text-lg font-black mb-6 shadow-2xl">
+                          <div className="bg-primary text-white inline-block px-4 py-2 rounded-xl text-lg font-black mb-6 shadow-2xl relative overflow-hidden group/badge">
+                            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/badge:animate-shine" />
                             -{result.lost} Eliminados
                           </div>
                           <div className="text-3xl font-serif font-bold mb-2">{result.name}</div>
