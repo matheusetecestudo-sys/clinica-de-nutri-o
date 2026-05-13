@@ -196,12 +196,12 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
         y: -10,
         boxShadow: "0 30px 60px -15px rgba(5, 150, 105, 0.25)"
       }}
-      className="group bg-white rounded-[32px] overflow-hidden flex flex-col shadow-lg border border-gray-100 transition-all duration-500 relative min-h-[480px] md:min-h-[520px]"
+      className="group bg-white rounded-[32px] overflow-hidden flex flex-col shadow-lg border border-gray-100 transition-all duration-500 relative min-h-[400px] md:min-h-[440px]"
     >
       <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/20 rounded-[32px] transition-all duration-500 pointer-events-none z-20" />
       
-      {/* Top Image Section - Fixed Proportion */}
-      <div className="aspect-[16/11] overflow-hidden relative shrink-0">
+      {/* Top Image Section - More Compact */}
+      <div className="aspect-[16/9] overflow-hidden relative shrink-0">
         <img 
           src={service.image} 
           alt={service.name} 
@@ -211,25 +211,25 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
         />
       </div>
 
-      {/* Content Block Below - Centralized & Responsive */}
-      <div className="p-6 md:p-8 flex flex-col flex-grow items-center text-center justify-between">
+      {/* Content Block Below - Dense & Organized */}
+      <div className="p-5 md:p-6 flex flex-col flex-grow items-center text-center justify-between">
         <div>
-          <h3 className="text-xl md:text-2xl font-serif font-bold text-secondary mb-3 leading-tight group-hover:text-primary transition-colors">
+          <h3 className="text-lg md:text-xl font-serif font-bold text-secondary mb-2 leading-tight group-hover:text-primary transition-colors">
             {service.name}
           </h3>
           
-          <p className="text-gray-500 text-[11px] md:text-sm leading-relaxed font-medium max-w-[260px] mx-auto">
+          <p className="text-gray-500 text-[10px] md:text-xs leading-relaxed font-medium max-w-[220px] mx-auto line-clamp-3">
             {service.description}
           </p>
         </div>
         
-        {/* Footer Section - Exact duplicate of the main CTA style */}
-        <div className="pt-6 w-full">
+        {/* Footer Section - Compact Button */}
+        <div className="pt-4 w-full">
           <a 
             href={`https://wa.me/5511992876219?text=Olá! Gostaria de saber mais sobre o ${service.name}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex bg-primary text-white px-8 py-3.5 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-secondary transition-all shadow-xl shadow-primary/20"
+            className="inline-flex bg-primary text-white px-6 py-2.5 rounded-full font-black uppercase tracking-widest text-[9px] md:text-[10px] hover:bg-secondary transition-all shadow-lg shadow-primary/20"
           >
             Saiba mais
           </a>
