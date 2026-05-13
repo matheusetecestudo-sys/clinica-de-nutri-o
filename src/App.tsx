@@ -745,31 +745,38 @@ export default function App() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.8, delay: index * 0.15 }}
-                      className="group relative rounded-[40px] overflow-hidden aspect-[3/4.5] shadow-2xl border-2 border-primary/20 hover:border-primary transition-all duration-700 bg-secondary"
+                      className="group relative rounded-[32px] overflow-hidden aspect-[4/5] shadow-2xl border border-gray-100 hover:border-primary transition-all duration-700 bg-secondary"
                     >
-                      <img 
-                        src={result.image} 
-                        alt={`Resultado real - ${result.name}`}
-                        className="w-full h-full object-contain transition-transform duration-[2s] group-hover:scale-105"
-                        referrerPolicy="no-referrer"
-                        loading="lazy"
-                      />
-                      
-                      {/* Floating Badges */}
-                      <div className="absolute top-6 left-6 flex flex-col gap-2 z-20">
-                        <div className="bg-primary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">
-                          -{result.lost} Eliminados
-                        </div>
+                      {/* Blurred Background Fill */}
+                      <div className="absolute inset-0 z-0">
+                        <img 
+                          src={result.image} 
+                          alt=""
+                          className="w-full h-full object-cover blur-2xl opacity-30 scale-110"
+                        />
                       </div>
 
-                      <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/20 to-transparent opacity-95 group-hover:opacity-100 transition-opacity duration-500 p-10 flex flex-col justify-end">
-                        <div className="text-white drop-shadow-2xl translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                          <div className="bg-primary text-white inline-block px-4 py-2 rounded-xl text-lg font-black mb-6 shadow-2xl relative overflow-hidden group/badge">
-                            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/badge:animate-shine" />
+                      {/* Main Full Image - No Crops */}
+                      <div className="relative h-full w-full z-10 flex items-center justify-center p-2">
+                        <img 
+                          src={result.image} 
+                          alt={`Resultado real - ${result.name}`}
+                          className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                          referrerPolicy="no-referrer"
+                          loading="lazy"
+                        />
+                      </div>
+                      
+                      {/* Bottom Info Overlay */}
+                      <div className="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-secondary via-secondary/80 to-transparent p-6 pt-12">
+                        <div className="flex flex-col items-center text-center">
+                          <div className="bg-primary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl mb-3">
                             -{result.lost} Eliminados
                           </div>
-                          <div className="text-3xl font-serif font-bold mb-2">{result.name}</div>
-                          <div className="text-white/60 font-bold text-sm uppercase tracking-[0.2em]">{result.age} Anos • Resultado Real</div>
+                          <h3 className="text-xl md:text-2xl font-serif font-bold text-white mb-1 leading-tight tracking-tight">
+                            {result.name}
+                          </h3>
+                          <span className="text-white/50 text-[10px] font-black uppercase tracking-[0.2em]">{result.age} Anos</span>
                         </div>
                       </div>
                     </motion.div>
@@ -785,23 +792,32 @@ export default function App() {
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
                       transition={{ duration: 0.5, ease: "easeOut" }}
-                      className="relative bg-secondary rounded-[24px] overflow-hidden shadow-xl aspect-[4/5]"
+                      className="relative bg-secondary rounded-[32px] overflow-hidden shadow-xl aspect-[4/5]"
                     >
-                      <img 
-                        src={results[activeResultIndex].image} 
-                        alt={results[activeResultIndex].name}
-                        className="w-full h-full object-contain"
-                        referrerPolicy="no-referrer"
-                      />
+                      {/* Blurred Background Fill */}
+                      <div className="absolute inset-0 z-0">
+                        <img 
+                          src={results[activeResultIndex].image} 
+                          alt=""
+                          className="w-full h-full object-cover blur-2xl opacity-30 scale-110"
+                        />
+                      </div>
+
+                      <div className="relative h-full w-full z-10 flex items-center justify-center p-2">
+                        <img 
+                          src={results[activeResultIndex].image} 
+                          alt={results[activeResultIndex].name}
+                          className="max-w-full max-h-full object-contain"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
                       
-                      <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/40 to-transparent p-6 flex flex-col justify-end">
-                        <div className="text-white drop-shadow-xl">
-                          <div className="bg-primary text-white inline-block px-4 py-2 rounded-xl text-lg font-black mb-4 shadow-xl">
-                            -{results[activeResultIndex].lost}
-                          </div>
-                          <div className="text-3xl font-serif font-bold mb-1">{results[activeResultIndex].name}</div>
-                          <div className="text-white/60 font-bold text-sm uppercase tracking-widest">{results[activeResultIndex].age} Anos</div>
+                      <div className="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-secondary via-secondary/80 to-transparent p-6 pt-12 text-center">
+                        <div className="bg-primary text-white inline-block px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest mb-3 shadow-xl">
+                          -{results[activeResultIndex].lost} Eliminados
                         </div>
+                        <div className="text-2xl md:text-3xl font-serif font-bold text-white mb-1">{results[activeResultIndex].name}</div>
+                        <div className="text-white/50 font-black text-[9px] uppercase tracking-widest">{results[activeResultIndex].age} Anos</div>
                       </div>
                     </motion.div>
                   </AnimatePresence>
