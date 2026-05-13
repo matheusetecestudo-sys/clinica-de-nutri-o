@@ -196,11 +196,12 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
         y: -10,
         boxShadow: "0 30px 60px -15px rgba(5, 150, 105, 0.25)"
       }}
-      className="group bg-white rounded-[32px] overflow-hidden flex flex-col h-full shadow-lg border border-gray-100 transition-all duration-500 relative"
+      className="group bg-white rounded-[32px] overflow-hidden flex flex-col aspect-[3/4.5] shadow-lg border border-gray-100 transition-all duration-500 relative"
     >
       <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/20 rounded-[32px] transition-all duration-500 pointer-events-none z-20" />
-      {/* Top Image Section - More compact */}
-      <div className="aspect-[16/9] overflow-hidden relative">
+      
+      {/* Top Image Section - Exactly 50% */}
+      <div className="h-1/2 overflow-hidden relative shrink-0">
         <img 
           src={service.image} 
           alt={service.name} 
@@ -210,8 +211,8 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
         />
       </div>
 
-      {/* Content Block Below - Compact padding */}
-      <div className="p-6 md:p-8 flex flex-col flex-grow items-center text-center">
+      {/* Content Block Below - Exactly 50% & Centralized */}
+      <div className="p-6 md:p-8 flex flex-col h-1/2 items-center text-center">
         <h3 className="text-xl md:text-2xl font-serif font-bold text-secondary mb-3 leading-tight group-hover:text-primary transition-colors">
           {service.name}
         </h3>
