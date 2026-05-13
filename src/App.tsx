@@ -201,15 +201,16 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
     >
       <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/20 rounded-[32px] transition-all duration-500 pointer-events-none z-20" />
       
-      {/* Top Image Section - 50% of card height with Full Visibility */}
-      <div className="h-1/2 overflow-hidden relative bg-gray-50/30 flex items-center justify-center p-6">
+      {/* Top Image Section - 100% Full Fill */}
+      <div className="h-1/2 overflow-hidden relative">
         <img 
           src={service.image} 
           alt={service.name} 
-          className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           referrerPolicy="no-referrer"
           loading="lazy"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
       </div>
 
       {/* Content Block Below - 50% of card height */}
@@ -507,7 +508,7 @@ export default function App() {
                     <img 
                       src="/images/doutora.png" 
                       alt="Dra. Luciana Duno - Nutricionista Especialista em Emagrecimento e Saúde"
-                      className="w-full h-full object-contain bg-gray-50/30"
+                      className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
                       loading="lazy"
                       decoding="async"
