@@ -126,12 +126,12 @@ const BMICalculator = () => {
               </div>
 
               <a 
-                href={`https://wa.me/5511992876219?text=Olá! Calculei meu IMC no site e deu ${result.bmi} (${result.category}). Gostaria de agendar minha consulta VIP.`}
+                href={`https://wa.me/5511992876219?text=Olá Dra. Luciana! Meu IMC deu ${result.bmi} (${result.category}). Gostaria de agendar uma consulta.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-secondary text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-primary transition-all shadow-lg flex items-center justify-center gap-3 mx-auto"
+                className="w-full bg-primary text-white px-7 py-3 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-secondary transition-all flex items-center justify-center gap-2 shadow-xl shadow-primary/20 whitespace-nowrap"
               >
-                Garantir meu Protocolo
+                Agendar Consulta VIP
                 <ArrowRight size={16} />
               </a>
             </motion.div>

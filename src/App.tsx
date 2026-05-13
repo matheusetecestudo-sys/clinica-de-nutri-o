@@ -227,7 +227,7 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
           href={`https://wa.me/5511992876219?text=Olá! Gostaria de saber mais sobre o ${service.name}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex bg-primary text-white px-8 py-3 rounded-full font-black uppercase tracking-widest text-[9px] md:text-[10px] hover:bg-secondary transition-all shadow-lg shadow-primary/20"
+          className="inline-flex bg-primary text-white px-7 py-2.5 rounded-full font-black uppercase tracking-widest text-[9px] md:text-[10px] hover:bg-secondary transition-all shadow-lg shadow-primary/20 whitespace-nowrap"
         >
           Saiba mais
         </a>
@@ -540,9 +540,9 @@ export default function App() {
                   </p>
                   
                   <div className="flex mb-12">
-                    <a href="https://wa.me/5511992876219" className="bg-secondary text-white px-8 py-4 rounded-2xl font-bold hover:bg-primary transition-all flex items-center gap-2 group shadow-xl shadow-secondary/10">
+                    <a href="https://wa.me/5511992876219" className="bg-secondary text-white px-7 py-3 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-primary transition-all flex items-center gap-2 group shadow-xl shadow-secondary/10 whitespace-nowrap">
                       Conhecer a Metodologia
-                      <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                     </a>
                   </div>
 
@@ -1078,13 +1078,12 @@ export default function App() {
                     ))}
                   </div>
 
-                  <a 
-                    href="https://wa.me/5511992876219" 
-                    className="bg-primary text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-sm hover:bg-secondary transition-all shadow-xl shadow-primary/20 flex items-center justify-center gap-4 group"
-                  >
+                  <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6 justify-center md:justify-start">
+                  <a href="https://wa.me/5511992876219?text=Olá! Gostaria de agendar uma consulta VIP." target="_blank" className="w-full sm:w-auto bg-primary text-white px-7 py-3 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-secondary transition-all flex items-center justify-center gap-2 group shadow-xl shadow-primary/20 whitespace-nowrap">
                     Agendar Consulta VIP
-                    <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </a>
+                </div>
                 </motion.div>
 
                 {/* Map Container */}
@@ -1107,7 +1106,7 @@ export default function App() {
                       </div>
                       <div className="text-secondary font-black text-[9px] md:text-xs uppercase tracking-widest truncate max-w-[120px] md:max-w-none">@lucianadunonutri</div>
                     </div>
-                    <a href="https://instagram.com" target="_blank" className="bg-secondary text-white px-3 md:px-4 py-2 rounded-lg md:rounded-xl text-[8px] md:text-[10px] font-black uppercase tracking-widest hover:bg-primary transition-colors shrink-0">Seguir</a>
+                    <a href="https://instagram.com" target="_blank" className="bg-secondary text-white px-3 md:px-4 py-2 rounded-lg md:rounded-xl text-[8px] md:text-[10px] font-black uppercase tracking-widest hover:bg-primary transition-colors shrink-0 whitespace-nowrap">Seguir</a>
                   </div>
                 </motion.div>
               </div>
@@ -1133,17 +1132,15 @@ export default function App() {
                   <p className="text-gray-400 text-sm leading-relaxed mb-8">
                     Especializada em emagrecimento saudável e performance humana. Transformando vidas através da nutrição consciente e baseada em evidências.
                   </p>
-                  <div className="flex gap-4">
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary transition-all border border-white/10">
-                      <Instagram size={20} />
-                    </a>
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary transition-all border border-white/10">
-                      <Facebook size={20} />
-                    </a>
-                    <a href="https://wa.me/5511992876219" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-[#25D366] transition-all border border-white/10">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-5 h-5" />
-                    </a>
-                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
+                      <a href="https://wa.me/5511992876219" target="_blank" className="bg-white text-primary px-7 py-3 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-secondary hover:text-white transition-all flex items-center justify-center gap-2 group shadow-xl whitespace-nowrap">
+                        Agendar via WhatsApp
+                        <MessageSquare size={16} className="group-hover:scale-110 transition-transform" />
+                      </a>
+                      <a href="tel:+5511992876219" className="bg-transparent text-white border-2 border-white/30 px-7 py-3 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-white hover:text-primary transition-all flex items-center justify-center whitespace-nowrap">
+                        Ligar Agora
+                      </a>
+                    </div>
                 </div>
 
                 <div>
