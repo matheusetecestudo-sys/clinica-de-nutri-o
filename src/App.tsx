@@ -367,14 +367,14 @@ export default function App() {
       name: "Mariana S.",
       age: 32,
       lost: "15kg",
-      image: "/images/mulher_1_card.webp",
+      image: "/images/mulher04.png",
       before: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format,compress&fit=crop&q=80&w=400&fm=webp"
     },
     {
       name: "Ricardo M.",
       age: 45,
       lost: "22kg",
-      image: "/images/homem_card.webp",
+      image: "/images/homem01.png",
       before: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format,compress&fit=crop&q=80&w=400&fm=webp"
     },
     {
@@ -757,11 +757,11 @@ export default function App() {
                       </div>
 
                       {/* Main Full Image - No Crops */}
-                      <div className="relative h-full w-full z-10 flex items-center justify-center p-2">
+                      <div className="relative h-full w-full z-10 flex items-end justify-center pt-8">
                         <img 
                           src={result.image} 
                           alt={`Resultado real - ${result.name}`}
-                          className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                          className="w-full h-full object-contain object-bottom transition-transform duration-700 group-hover:scale-105"
                           referrerPolicy="no-referrer"
                           loading="lazy"
                         />
@@ -803,11 +803,11 @@ export default function App() {
                         />
                       </div>
 
-                      <div className="relative h-full w-full z-10 flex items-center justify-center p-2">
+                      <div className="relative h-full w-full z-10 flex items-end justify-center pt-8">
                         <img 
                           src={results[activeResultIndex].image} 
                           alt={results[activeResultIndex].name}
-                          className="max-w-full max-h-full object-contain"
+                          className="w-full h-full object-contain object-bottom"
                           referrerPolicy="no-referrer"
                         />
                       </div>
