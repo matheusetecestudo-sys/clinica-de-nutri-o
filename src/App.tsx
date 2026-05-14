@@ -702,13 +702,12 @@ export default function App() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.5 }}
-                    className="flex items-center justify-between gap-4 p-5 md:p-6 rounded-[20px] bg-primary/10 border border-primary/30 hover:bg-primary hover:border-primary transition-all duration-300 group mt-2"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="flex items-center justify-center gap-3 mt-2 bg-primary text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-white hover:text-primary transition-all shadow-2xl shadow-primary/30 group whitespace-nowrap"
                   >
-                    <div>
-                      <div className="text-white font-bold text-sm md:text-base leading-tight">Pronta para ver esse método funcionando em você?</div>
-                      <div className="text-primary text-xs mt-1 font-bold uppercase tracking-wider group-hover:text-white transition-colors">Agendar avaliação gratuita</div>
-                    </div>
-                    <ArrowRight size={22} className="text-primary group-hover:text-white group-hover:translate-x-1 transition-all shrink-0" />
+                    Agendar Avaliação Gratuita
+                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                   </motion.a>
                 </div>
               </div>
