@@ -85,17 +85,17 @@ const Testimonials = () => {
       </div>
 
       {/* Mobile Carousel - Premium Experience */}
-      <div className="md:hidden relative px-4">
+      <div className="md:hidden relative px-2">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeIndex}
-            initial={{ opacity: 0, scale: 0.9, x: 50 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            exit={{ opacity: 0, scale: 0.9, x: -50 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            className="bg-white p-8 rounded-[40px] shadow-2xl border-2 border-primary/20 flex flex-col relative"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.25, ease: "circOut" }}
+            className="bg-white p-8 rounded-[32px] shadow-xl border border-primary/10 flex flex-col relative"
           >
-             <div className="absolute -top-4 left-8 w-10 h-10 bg-primary text-white rounded-xl flex items-center justify-center shadow-lg">
+             <div className="absolute -top-5 right-8 w-10 h-10 bg-primary/10 text-primary rounded-2xl flex items-center justify-center rotate-12">
               <Quote size={20} />
             </div>
             
@@ -105,13 +105,13 @@ const Testimonials = () => {
               ))}
             </div>
 
-            <p className="text-secondary font-serif italic text-base leading-relaxed mb-8 flex-grow">
+            <p className="text-secondary font-serif italic text-base leading-relaxed mb-8 flex-grow relative z-10">
               "{testimonials[activeIndex].text}"
             </p>
 
-            <div className="flex items-center gap-4 border-t border-gray-50 pt-6">
+            <div className="flex items-center gap-4 border-t border-gray-100 pt-6">
               <div className="relative">
-                <div className="w-12 h-12 rounded-full overflow-hidden shadow-xl border-2 border-white ring-4 ring-primary/5">
+                <div className="w-12 h-12 rounded-full overflow-hidden shadow-md border-2 border-white ring-2 ring-primary/5">
                   <img src={testimonials[activeIndex].image} alt={testimonials[activeIndex].name} className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute -bottom-1 -right-1 bg-[#25D366] text-white w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">
@@ -119,34 +119,34 @@ const Testimonials = () => {
                 </div>
               </div>
               <div>
-                <div className="font-bold text-secondary text-sm">{testimonials[activeIndex].name}</div>
+                <div className="font-bold text-secondary text-sm leading-tight">{testimonials[activeIndex].name}</div>
                 <div className="text-[9px] text-primary font-black uppercase tracking-widest">{testimonials[activeIndex].role}</div>
               </div>
             </div>
           </motion.div>
         </AnimatePresence>
 
-        {/* Carousel Controls - Larger & More Intutive */}
-        <div className="flex items-center justify-center gap-8 mt-10">
+        {/* Carousel Controls - Faster response */}
+        <div className="flex items-center justify-between mt-8 px-4">
           <button 
             onClick={prev}
-            className="w-14 h-14 rounded-full bg-white border-2 border-primary/10 flex items-center justify-center text-primary shadow-xl active:bg-primary active:text-white transition-all"
+            className="w-12 h-12 rounded-full bg-white border border-gray-100 flex items-center justify-center text-primary shadow-lg active:scale-95 transition-all"
           >
-            <ChevronLeft size={28} />
+            <ChevronLeft size={24} />
           </button>
-          <div className="flex gap-2">
+          <div className="flex gap-1.5">
             {testimonials.map((_, i) => (
               <div 
                 key={i} 
-                className={`h-2 rounded-full transition-all duration-500 ${i === activeIndex ? "bg-primary w-8" : "bg-gray-200 w-2"}`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${i === activeIndex ? "bg-primary w-6" : "bg-gray-200 w-1.5"}`}
               />
             ))}
           </div>
           <button 
             onClick={next}
-            className="w-14 h-14 rounded-full bg-white border-2 border-primary/10 flex items-center justify-center text-primary shadow-xl active:bg-primary active:text-white transition-all"
+            className="w-12 h-12 rounded-full bg-white border border-gray-100 flex items-center justify-center text-primary shadow-lg active:scale-95 transition-all"
           >
-            <ChevronRight size={28} />
+            <ChevronRight size={24} />
           </button>
         </div>
       </div>

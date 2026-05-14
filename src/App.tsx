@@ -782,7 +782,7 @@ export default function App() {
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
-                      transition={{ duration: 0.5, ease: "easeOut" }}
+                      transition={{ duration: 0.25, ease: "circOut" }}
                       className="relative bg-secondary rounded-[32px] overflow-hidden shadow-xl flex flex-col"
                     >
                       {/* Main Full Image - Image drives height */}
