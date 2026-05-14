@@ -721,20 +721,7 @@ export default function App() {
                     Histórias de superação e saúde que inspiram nossa dedicação diária.
                   </p>
                 </div>
-                <div className="md:hidden flex gap-4">
-                  <div 
-                    onClick={() => setActiveResultIndex((prev) => (prev - 1 + results.length) % results.length)}
-                    className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary cursor-pointer transition-all active:scale-95"
-                  >
-                    <ChevronRight size={24} className="rotate-180" />
-                  </div>
-                  <div 
-                    onClick={() => setActiveResultIndex((prev) => (prev + 1) % results.length)}
-                    className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary cursor-pointer transition-all active:scale-95"
-                  >
-                    <ChevronRight size={24} />
-                  </div>
-                </div>
+
               </motion.div>
 
               <div className="relative">
