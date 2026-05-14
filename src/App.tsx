@@ -197,12 +197,12 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
         y: -10,
         boxShadow: "0 30px 60px -15px rgba(5, 150, 105, 0.25)"
       }}
-      className="group bg-white rounded-[32px] overflow-hidden flex flex-col shadow-lg border border-gray-100 transition-all duration-500 relative h-[480px]"
+      className="group bg-white rounded-[32px] overflow-hidden flex flex-col shadow-lg border border-gray-100 transition-all duration-500 relative h-[380px] md:h-[420px]"
     >
       <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/20 rounded-[32px] transition-all duration-500 pointer-events-none z-20" />
       
       {/* Top Image Section - 100% Full Fill */}
-      <div className="h-1/2 overflow-hidden relative">
+      <div className="h-[45%] overflow-hidden relative">
         <img 
           src={service.image} 
           alt={service.name} 
@@ -213,8 +213,8 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
       </div>
 
-      {/* Content Block Below - 50% of card height */}
-      <div className="h-1/2 p-6 md:p-8 flex flex-col items-center text-center justify-between">
+      {/* Content Block Below */}
+      <div className="h-[55%] p-5 md:p-6 flex flex-col items-center text-center justify-between">
         <div className="mb-4">
           <h3 className="text-lg md:text-xl font-serif font-bold text-secondary mb-3 leading-tight group-hover:text-primary transition-colors">
             {service.name}
@@ -420,11 +420,11 @@ export default function App() {
                 <picture>
                   <source 
                     media="(max-width: 768px)" 
-                    srcSet="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format,compress&fit=crop&q=80&w=1200&fm=webp" 
+                    srcSet="/images/hero-premium.png" 
                   />
                   <img 
-                    src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format,compress&fit=crop&q=80&w=2400&fm=webp" 
-                    alt="Alimentação saudável e vibrante com frutas e vegetais - DUNO Nutri"
+                    src="/images/hero-premium.png" 
+                    alt="Ambiente premium de clínica de nutrição DUNO"
                     className="w-full h-full object-cover object-center"
                     referrerPolicy="no-referrer"
                     loading="eager"
