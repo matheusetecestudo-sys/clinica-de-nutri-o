@@ -420,11 +420,11 @@ export default function App() {
                 <picture>
                   <source 
                     media="(max-width: 768px)" 
-                    srcSet="/images/hero-premium.png" 
+                    srcSet="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format,compress&fit=crop&q=80&w=1200&fm=webp" 
                   />
                   <img 
-                    src="/images/hero-premium.png" 
-                    alt="Ambiente premium de clínica de nutrição DUNO"
+                    src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format,compress&fit=crop&q=80&w=2400&fm=webp" 
+                    alt="Alimentação saudável e vibrante - DUNO Nutri"
                     className="w-full h-full object-cover object-center"
                     referrerPolicy="no-referrer"
                     loading="eager"
