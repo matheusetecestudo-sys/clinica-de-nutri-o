@@ -457,7 +457,7 @@ export default function App() {
                   Domine sua <span className="text-primary italic">biologia</span>. Transforme sua vida.
                 </h1>
                 <p className="text-base md:text-2xl text-white/90 mb-8 md:mb-12 leading-relaxed max-w-2xl font-light drop-shadow-lg">
-                  Esqueça as dietas genéricas. Desenvolvemos estratégias de elite baseadas em precisão genética e reprogramação metabólica para resultados permanentes.
+                  Dietas genéricas são o passado. Aqui, seu corpo é mapeado, decodificado e reprogramado — até você se tornar irreconhecível.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mt-8 md:mt-12 relative z-50">
                   <motion.a 
@@ -468,7 +468,7 @@ export default function App() {
                     whileTap={{ scale: 0.98 }}
                     className="bg-primary text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs md:text-sm transition-all flex items-center justify-center gap-3 group shadow-2xl shadow-primary/40 overflow-hidden whitespace-nowrap"
                   >
-                    Agendar Consulta VIP
+                    Quero Transformar Meu Corpo
                     <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                   </motion.a>
                   <motion.a 
@@ -478,7 +478,7 @@ export default function App() {
                     whileTap={{ scale: 0.98 }}
                     className="bg-white/10 backdrop-blur-xl text-white border border-white/20 px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs md:text-sm hover:bg-white hover:text-secondary transition-all flex items-center justify-center whitespace-nowrap"
                   >
-                    Ver Programas
+                    Como Funciona
                   </motion.a>
                 </div>
               </motion.div>
@@ -535,15 +535,15 @@ export default function App() {
                     Reprogramação Biológica: O fim do <span className="text-primary italic">efeito sanfona</span>.
                   </h2>
                   <p className="text-base md:text-lg text-gray-600 mb-4 md:mb-6 leading-relaxed">
-                    A <strong>Dra. Luciana Duno</strong> não entrega apenas planos alimentares; ela projeta novas realidades biológicas. Com 15 anos de expertise clínica, seu método é a união definitiva entre alta tecnologia diagnóstica e nutrição comportamental humanizada.
+                    Seu corpo não é o problema — é o plano. A <strong>Dra. Luciana Duno</strong> passou 15 anos decodificando o que realmente funciona para cada metabolismo. Seu método não promete milagres: entrega ciência aplicada, monitoramento contínuo e resultados que você consegue manter para sempre.
                   </p>
                   <p className="text-base md:text-lg text-gray-600 mb-8 md:mb-10 leading-relaxed">
-                    Nossa missão é devolver a você o controle total sobre o seu corpo. Através da modulação hormonal e otimização enzimática, garantimos que sua jornada seja sustentável, prazerosa e, acima de tudo, extraordinária.
+                    Se você está aqui, provavelmente já tentou de tudo. E já sabe que força de vontade sozinha não basta. O que faltou foi um protocolo feito para o seu corpo — não para a média.
                   </p>
                   
                   <div className="flex mb-12">
                     <a href="https://wa.me/5511992876219" className="bg-secondary text-white px-7 py-3 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-primary transition-all flex items-center gap-2 group shadow-xl shadow-secondary/10 whitespace-nowrap">
-                      Conhecer a Metodologia
+                      Quero Esse Protocolo
                       <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                     </a>
                   </div>
@@ -604,15 +604,15 @@ export default function App() {
                   <div>
                     <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">Pronto para assumir o <span className="italic underline underline-offset-8">controle</span> da sua vida?</h2>
                     <p className="text-white/80 text-base md:text-xl mb-0 leading-relaxed">
-                      Não espere o momento perfeito. Ele não existe. Existe apenas a sua decisão de começar hoje com o suporte certo.
+                     Cada dia que passa sem agir é um dia a mais convivendo com o mesmo problema. A decisão mais inteligente que você vai tomar hoje leva 30 segundos — e muda o próximo ano.
                     </p>
                   </div>
                   <div className="flex flex-col sm:flex-row gap-4 lg:justify-end">
                     <a href="https://wa.me/5511992876219" className="bg-white text-primary px-8 md:px-10 py-4 md:py-6 rounded-2xl font-black uppercase tracking-widest hover:bg-secondary hover:text-white transition-all text-center shadow-xl">
-                      Começar Agora
+                      Quero Mudar Agora →
                     </a>
                     <a href="#inicio" onClick={(e) => handleGlobalNavClick(e, "#inicio")} className="bg-primary-dark/20 backdrop-blur-md border border-white/20 text-white px-8 md:px-10 py-4 md:py-6 rounded-2xl font-black uppercase tracking-widest hover:bg-white/10 transition-all text-center">
-                      Voltar ao Topo
+                      Ver Resultados
                     </a>
                   </div>
                 </div>
@@ -620,87 +620,97 @@ export default function App() {
             </div>
           </section>
 
-          {/* Methodology Section - New and Powerful */}
-          <section className="py-12 md:py-32 bg-secondary relative overflow-hidden">
-            {/* Background elements */}
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 translate-x-1/4" />
+          {/* Methodology Section - Compact & Modern */}
+          <section className="py-12 md:py-20 bg-secondary relative overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(5,150,105,0.08)_0%,transparent_60%)]" />
             
             <div className="container mx-auto px-4 md:px-6 relative z-10">
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                >
-                  <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
-                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                    <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px]">O Diferencial Competitivo</span>
-                  </div>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 leading-[1.1]">
-                    Os 3 Pilares do <br className="hidden lg:block"/><span className="text-primary italic font-light">Método DUNO</span>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="max-w-3xl mb-12"
+              >
+                  <span className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">O Diferencial DUNO</span>
+                  <h2 className="text-3xl md:text-5xl font-serif font-bold text-white leading-tight">
+                    Ciência, Comportamento e Resultados.
                   </h2>
-                  <p className="text-white/60 text-base md:text-lg mb-12 leading-relaxed max-w-lg font-light">
-                    Nossa metodologia foi desenhada para quem já tentou de tudo e busca uma solução definitiva, baseada no que há de mais moderno na ciência nutricional mundial.
-                  </p>
-                  
-                  <div className="space-y-4 md:space-y-6">
-                    {[
-                      { t: "Ciência & Bioindividualidade", d: "Mapeamento genético e metabólico profundo para entender o que o seu corpo realmente precisa para queimar gordura.", i: <Dna size={24} /> },
-                      { t: "Reprogramação Comportamental", d: "Técnicas avançadas para dominar a ansiedade e os gatilhos emocionais, transformando sua relação com a comida.", i: <Brain size={24} /> },
-                      { t: "Performance Humana", d: "Monitoramento contínuo e ajustes dinâmicos no protocolo para garantir que sua evolução nunca encontre um platô.", i: <Activity size={24} /> }
-                    ].map((item, idx) => (
-                      <motion.div 
-                        key={idx} 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: idx * 0.2 }}
-                        viewport={{ once: true }}
-                        className="flex flex-col sm:flex-row gap-5 p-6 md:p-8 rounded-[32px] bg-white/[0.03] border border-white/[0.08] hover:bg-white/[0.08] hover:border-primary/50 backdrop-blur-xl transition-all duration-500 group relative overflow-hidden"
-                      >
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/20 transition-colors" />
-                        
-                        <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-primary to-[#036040] rounded-2xl flex items-center justify-center text-white shrink-0 shadow-[0_0_30px_rgba(5,150,105,0.3)] group-hover:scale-110 transition-transform duration-500 relative z-10">
-                          {item.i}
-                        </div>
-                        <div className="relative z-10 pt-1">
-                          <h4 className="text-white font-serif font-bold text-xl md:text-2xl mb-2 md:mb-3 group-hover:text-primary transition-colors">{item.t}</h4>
-                          <p className="text-white/60 text-sm md:text-base leading-relaxed font-light">{item.d}</p>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-                
+              </motion.div>
+
+              {/* Image + Pillars */}
+              <div className="grid lg:grid-cols-5 gap-6 md:gap-8 items-start">
+                {/* Image column */}
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1 }}
-                  className="relative"
+                  transition={{ duration: 0.8 }}
+                  className="lg:col-span-2 relative"
                 >
-                  <div className="rounded-[40px] md:rounded-[48px] overflow-hidden border border-white/10 shadow-2xl relative group">
+                  <div className="rounded-[28px] overflow-hidden border border-white/10 shadow-2xl">
                     <img 
                       src="/images/doutora02.png" 
                       alt="Dra. Luciana Duno - Metodologia Científica DUNO"
                       className="w-full h-auto block"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-secondary/50 to-transparent rounded-[28px]" />
                   </div>
-                  
-                  {/* Floating Result Card */}
-                  <div className="absolute -bottom-6 -left-4 md:-bottom-8 md:-left-8 bg-white p-6 md:p-8 rounded-3xl shadow-2xl max-w-[260px] md:max-w-[280px] border border-gray-100 z-20">
-                    <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                      <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary shrink-0">
-                        <CheckCircle2 size={20} className="md:w-6 md:h-6" />
+                  <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-xl border border-white/10 p-4 rounded-2xl">
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 bg-primary/20 rounded-xl flex items-center justify-center text-primary shrink-0">
+                        <CheckCircle2 size={18} />
                       </div>
-                      <div className="font-bold text-secondary text-sm md:text-base leading-tight">Aprovado por Especialistas</div>
+                      <div>
+                        <div className="text-white font-bold text-xs leading-tight">+500 pacientes transformados</div>
+                        <div className="text-white/40 text-[9px] uppercase tracking-widest mt-0.5">Método validado clinicamente</div>
+                      </div>
                     </div>
-                    <p className="text-gray-500 text-[10px] md:text-xs italic leading-relaxed">
-                      "A abordagem da Dra. Luciana é o que há de mais avançado em termos de nutrição integrativa e emagrecimento."
-                    </p>
                   </div>
                 </motion.div>
+
+                {/* Pillars column */}
+                <div className="lg:col-span-3 flex flex-col gap-4">
+                  {[
+                    { t: "Bioindividualidade", d: "Nada de plano genérico. Mapeamos seu DNA metabólico para descobrir exatamente o que seu corpo precisa fazer para queimar gordura.", i: <Dna size={22} />, tag: "01" },
+                    { t: "Reprogramação Comportamental", d: "A comida é gatilho emocional, não só nutrição. Dominamos sua ansiedade e ressignificamos sua relação com a alimentação.", i: <Brain size={22} />, tag: "02" },
+                    { t: "Evolução Contínua", d: "Monitoramento e ajustes semanais. Nada de estagnação — só resultados progressivos e permanentes.", i: <Activity size={22} />, tag: "03" }
+                  ].map((item, idx) => (
+                    <motion.div 
+                      key={idx} 
+                      initial={{ opacity: 0, x: 30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.15, duration: 0.5 }}
+                      viewport={{ once: true }}
+                      className="flex gap-4 p-5 md:p-6 rounded-[20px] bg-white/[0.04] border border-white/[0.07] hover:bg-white/[0.08] hover:border-primary/40 transition-all duration-300 group"
+                    >
+                      <div className="flex flex-col items-center gap-2 shrink-0">
+                        <div className="w-11 h-11 bg-gradient-to-br from-primary to-[#036040] rounded-xl flex items-center justify-center text-white shadow-[0_0_20px_rgba(5,150,105,0.25)] group-hover:scale-110 transition-transform duration-300">
+                          {item.i}
+                        </div>
+                        <span className="text-primary/30 font-black text-[10px] tracking-widest">{item.tag}</span>
+                      </div>
+                      <div className="pt-1">
+                        <h4 className="text-white font-serif font-bold text-base md:text-lg mb-1.5 group-hover:text-primary transition-colors">{item.t}</h4>
+                        <p className="text-white/50 text-sm leading-relaxed font-light">{item.d}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                  <motion.a
+                    href="https://wa.me/5511992876219"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5 }}
+                    className="flex items-center justify-between gap-4 p-5 md:p-6 rounded-[20px] bg-primary/10 border border-primary/30 hover:bg-primary hover:border-primary transition-all duration-300 group mt-2"
+                  >
+                    <div>
+                      <div className="text-white font-bold text-sm md:text-base leading-tight">Pronta para ver esse método funcionando em você?</div>
+                      <div className="text-primary text-xs mt-1 font-bold uppercase tracking-wider group-hover:text-white transition-colors">Agendar avaliação gratuita</div>
+                    </div>
+                    <ArrowRight size={22} className="text-primary group-hover:text-white group-hover:translate-x-1 transition-all shrink-0" />
+                  </motion.a>
+                </div>
               </div>
             </div>
           </section>
@@ -716,9 +726,9 @@ export default function App() {
                 className="flex flex-col md:flex-row items-end justify-between mb-8 md:mb-12 gap-6"
               >
                 <div className="max-w-2xl">
-                  <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 md:mb-6">Transformações Reais</h2>
+                  <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 md:mb-6">Transformações <span className="text-primary italic">Reais</span></h2>
                   <p className="text-base md:text-lg text-gray-500">
-                    Histórias de superação e saúde que inspiram nossa dedicação diária.
+                    Provas concretas de que é possível ter o corpo que você deseja com saúde, energia e disciplina.
                   </p>
                 </div>
 
@@ -756,7 +766,6 @@ export default function App() {
                           <h3 className="text-xl md:text-2xl font-serif font-bold text-white mb-1 leading-tight tracking-tight">
                             {result.name}
                           </h3>
-                          <span className="text-white/50 text-[10px] font-black uppercase tracking-[0.2em]">{result.age} Anos</span>
                         </div>
                       </div>
                     </motion.div>
@@ -789,7 +798,6 @@ export default function App() {
                           -{results[activeResultIndex].lost} Eliminados
                         </div>
                         <div className="text-2xl md:text-3xl font-serif font-bold text-white mb-1">{results[activeResultIndex].name}</div>
-                        <div className="text-white/50 font-black text-[9px] uppercase tracking-widest">{results[activeResultIndex].age} Anos</div>
                       </div>
                     </motion.div>
                   </AnimatePresence>
@@ -851,8 +859,8 @@ export default function App() {
                 transition={{ duration: 0.8 }}
                 className="text-center max-w-3xl mx-auto mb-8 md:mb-12"
               >
-                <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 md:mb-6">O que dizem nossos pacientes</h2>
-                <p className="text-base md:text-lg text-gray-500">Histórias reais de transformação e saúde.</p>
+                <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 md:mb-6">O que nossos <span className="text-primary italic">pacientes</span> dizem</h2>
+                <p className="text-base md:text-lg text-gray-500">Veja como a vida e o corpo de quem passou pela consultoria mudaram de verdade.</p>
               </motion.div>
 
               <Suspense fallback={<div className="h-64 bg-gray-50 rounded-[40px] animate-pulse" />}>
@@ -868,10 +876,10 @@ export default function App() {
                 <div className="max-w-2xl">
                   <span className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Comunidade DUNO</span>
                   <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary leading-tight">
-                    Transformações reais no <span className="text-primary italic">Dia a Dia</span>
+                    Rotina e Ciência no <span className="text-primary italic">Dia a Dia</span>
                   </h2>
                   <p className="text-gray-500 mt-4 text-sm md:text-base">
-                    Acompanhe bastidores, dicas exclusivas e resultados de pacientes que decidiram mudar de vida. 
+                    Dicas diárias, bastidores e muito conteúdo sobre alta performance.
                   </p>
                 </div>
                 <a 
@@ -926,7 +934,7 @@ export default function App() {
                 className="bg-secondary rounded-[32px] p-8 md:p-12 text-center text-white relative overflow-hidden"
               >
                 <div className="relative z-10">
-                  <h3 className="text-2xl md:text-3xl font-serif font-bold mb-6">Inspirado por esses resultados?</h3>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold mb-6">Pronta para viver essa mudança?</h3>
                   <p className="text-gray-400 mb-10 max-w-xl mx-auto">Sua transformação pode ser a próxima. Agende uma conversa inicial e descubra o caminho para o seu melhor corpo.</p>
                   <a 
                     href="https://wa.me/5511992876219" 
