@@ -745,23 +745,14 @@ export default function App() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.8, delay: index * 0.15 }}
-                      className="group relative rounded-[32px] overflow-hidden aspect-[4/5] shadow-2xl border border-gray-100 hover:border-primary transition-all duration-700 bg-secondary"
+                      className="group relative rounded-[32px] overflow-hidden shadow-2xl border border-gray-100 hover:border-primary transition-all duration-700 bg-secondary flex flex-col"
                     >
-                      {/* Blurred Background Fill */}
-                      <div className="absolute inset-0 z-0">
-                        <img 
-                          src={result.image} 
-                          alt=""
-                          className="w-full h-full object-cover blur-2xl opacity-30 scale-110"
-                        />
-                      </div>
-
-                      {/* Main Full Image - No Crops */}
-                      <div className="relative h-full w-full z-10 flex items-end justify-center pt-8">
+                      {/* Main Full Image - Image drives height */}
+                      <div className="w-full relative z-10">
                         <img 
                           src={result.image} 
                           alt={`Resultado real - ${result.name}`}
-                          className="w-full h-full object-contain object-bottom transition-transform duration-700 group-hover:scale-105"
+                          className="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
                           referrerPolicy="no-referrer"
                           loading="lazy"
                         />
@@ -792,22 +783,14 @@ export default function App() {
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
                       transition={{ duration: 0.5, ease: "easeOut" }}
-                      className="relative bg-secondary rounded-[32px] overflow-hidden shadow-xl aspect-[4/5]"
+                      className="relative bg-secondary rounded-[32px] overflow-hidden shadow-xl flex flex-col"
                     >
-                      {/* Blurred Background Fill */}
-                      <div className="absolute inset-0 z-0">
-                        <img 
-                          src={results[activeResultIndex].image} 
-                          alt=""
-                          className="w-full h-full object-cover blur-2xl opacity-30 scale-110"
-                        />
-                      </div>
-
-                      <div className="relative h-full w-full z-10 flex items-end justify-center pt-8">
+                      {/* Main Full Image - Image drives height */}
+                      <div className="w-full relative z-10">
                         <img 
                           src={results[activeResultIndex].image} 
                           alt={results[activeResultIndex].name}
-                          className="w-full h-full object-contain object-bottom"
+                          className="w-full h-auto block"
                           referrerPolicy="no-referrer"
                         />
                       </div>
