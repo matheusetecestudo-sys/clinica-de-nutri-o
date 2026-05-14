@@ -197,12 +197,12 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
         y: -10,
         boxShadow: "0 30px 60px -15px rgba(5, 150, 105, 0.25)"
       }}
-      className="group bg-white rounded-[32px] overflow-hidden flex flex-col shadow-lg border border-gray-100 transition-all duration-500 relative h-full"
+      className="group bg-white rounded-[32px] overflow-hidden flex flex-col shadow-lg border border-gray-100 transition-all duration-500 relative h-[420px]"
     >
       <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/20 rounded-[32px] transition-all duration-500 pointer-events-none z-20" />
       
-      {/* Top Image Section - 100% Full Fill */}
-      <div className="aspect-video overflow-hidden relative">
+      {/* Top Image Section - 240px height to preserve original aspect ratio without cropping heads */}
+      <div className="h-[240px] shrink-0 overflow-hidden relative">
         <img 
           src={service.image} 
           alt={service.name} 
@@ -213,28 +213,26 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
       </div>
 
-      {/* Content Block Below */}
-      <div className="flex-1 p-5 md:p-6 flex flex-col items-center text-center">
-        <div className="mb-4">
-          <h3 className="text-lg md:text-xl font-serif font-bold text-secondary mb-3 leading-tight group-hover:text-primary transition-colors">
+      {/* Content Block Below - tight spacing to eliminate white space */}
+      <div className="flex-1 p-5 md:p-6 flex flex-col items-center text-center justify-between">
+        <div className="mb-2">
+          <h3 className="text-lg md:text-xl font-serif font-bold text-secondary mb-2 leading-tight group-hover:text-primary transition-colors">
             {service.name}
           </h3>
           
-          <p className="text-gray-500 text-[10px] md:text-xs leading-relaxed font-medium max-w-[240px]">
+          <p className="text-gray-500 text-[10px] md:text-xs leading-relaxed font-medium max-w-[240px] line-clamp-3">
             {service.description}
           </p>
         </div>
         
-        <div className="mt-auto">
-          <a 
-            href={`https://wa.me/5511992876219?text=Olá! Gostaria de saber mais sobre o ${service.name}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex bg-primary text-white px-7 py-3 rounded-full font-black uppercase tracking-widest text-[9px] md:text-[10px] hover:bg-secondary transition-all shadow-lg shadow-primary/20 whitespace-nowrap"
-          >
-            Saiba mais
-          </a>
-        </div>
+        <a 
+          href={`https://wa.me/5511992876219?text=Olá! Gostaria de saber mais sobre o ${service.name}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex bg-primary text-white px-7 py-3 rounded-full font-black uppercase tracking-widest text-[9px] md:text-[10px] hover:bg-secondary transition-all shadow-lg shadow-primary/20 whitespace-nowrap"
+        >
+          Saiba mais
+        </a>
       </div>
     </motion.div>
   );
@@ -417,8 +415,8 @@ export default function App() {
 
       <Header onNavClick={handleGlobalNavClick} />
 
-          <section id="inicio" className="relative min-h-[600px] md:min-h-screen flex flex-col pt-28 md:pt-32 pb-12 md:pb-20">
-              <div className="absolute inset-0 z-0 bg-black">
+          <section id="inicio" className="relative min-h-[480px] md:min-h-screen flex flex-col pt-28 md:pt-32 pb-12 md:pb-20">
+              <div className="absolute inset-0 z-0">
                 <picture>
                   <source 
                     media="(max-width: 768px)" 
@@ -427,7 +425,7 @@ export default function App() {
                   <img 
                     src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format,compress&fit=crop&q=80&w=2400&fm=webp" 
                     alt="Alimentação saudável e vibrante com frutas e vegetais - DUNO Nutri"
-                    className="w-full h-full object-contain md:object-cover object-top md:object-center"
+                    className="w-full h-full object-cover object-center"
                     referrerPolicy="no-referrer"
                     loading="eager"
                     decoding="async"
