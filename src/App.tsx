@@ -633,15 +633,18 @@ export default function App() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
                 >
-                  <span className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-6 block">O Diferencial Competitivo</span>
-                  <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-8 leading-tight">
-                    Os 3 Pilares do <span className="text-primary italic">Método DUNO</span>
+                  <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
+                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                    <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px]">O Diferencial Competitivo</span>
+                  </div>
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 leading-[1.1]">
+                    Os 3 Pilares do <br className="hidden lg:block"/><span className="text-primary italic font-light">Método DUNO</span>
                   </h2>
-                  <p className="text-white/80 text-lg md:text-xl mb-12 leading-relaxed">
+                  <p className="text-white/60 text-base md:text-lg mb-12 leading-relaxed max-w-lg font-light">
                     Nossa metodologia foi desenhada para quem já tentou de tudo e busca uma solução definitiva, baseada no que há de mais moderno na ciência nutricional mundial.
                   </p>
                   
-                  <div className="space-y-6">
+                  <div className="space-y-4 md:space-y-6">
                     {[
                       { t: "Ciência & Bioindividualidade", d: "Mapeamento genético e metabólico profundo para entender o que o seu corpo realmente precisa para queimar gordura.", i: <Dna size={24} /> },
                       { t: "Reprogramação Comportamental", d: "Técnicas avançadas para dominar a ansiedade e os gatilhos emocionais, transformando sua relação com a comida.", i: <Brain size={24} /> },
@@ -653,18 +656,16 @@ export default function App() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.2 }}
                         viewport={{ once: true }}
-                        className="flex gap-6 p-6 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-primary/30 backdrop-blur-md transition-all duration-500 group"
+                        className="flex flex-col sm:flex-row gap-5 p-6 md:p-8 rounded-[32px] bg-white/[0.03] border border-white/[0.08] hover:bg-white/[0.08] hover:border-primary/50 backdrop-blur-xl transition-all duration-500 group relative overflow-hidden"
                       >
-                        <motion.div 
-                          animate={{ y: [0, -5, 0] }}
-                          transition={{ duration: 4, repeat: Infinity, delay: idx * 0.5, ease: "easeInOut" }}
-                          className="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform"
-                        >
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/20 transition-colors" />
+                        
+                        <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-primary to-[#036040] rounded-2xl flex items-center justify-center text-white shrink-0 shadow-[0_0_30px_rgba(5,150,105,0.3)] group-hover:scale-110 transition-transform duration-500 relative z-10">
                           {item.i}
-                        </motion.div>
-                        <div>
-                          <h4 className="text-white font-bold text-xl mb-2 group-hover:text-primary transition-colors">{item.t}</h4>
-                          <p className="text-white/70 text-sm leading-relaxed max-w-md font-medium">{item.d}</p>
+                        </div>
+                        <div className="relative z-10 pt-1">
+                          <h4 className="text-white font-serif font-bold text-xl md:text-2xl mb-2 md:mb-3 group-hover:text-primary transition-colors">{item.t}</h4>
+                          <p className="text-white/60 text-sm md:text-base leading-relaxed font-light">{item.d}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -678,24 +679,24 @@ export default function App() {
                   transition={{ duration: 1 }}
                   className="relative"
                 >
-                  <div className="aspect-square rounded-[48px] overflow-hidden border border-white/10 shadow-2xl relative">
+                  <div className="aspect-[4/5] md:aspect-square rounded-[40px] md:rounded-[48px] overflow-hidden border border-white/10 shadow-2xl relative group">
                     <img 
                       src="https://images.unsplash.com/photo-1543353071-087092ec393a?auto=format,compress&fit=crop&q=80&w=1000" 
                       alt="Metodologia Científica DUNO"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/20 to-transparent" />
                   </div>
                   
                   {/* Floating Result Card */}
-                  <div className="absolute -bottom-8 -left-8 bg-white p-8 rounded-3xl shadow-2xl max-w-[280px] hidden md:block">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
-                        <CheckCircle2 size={24} />
+                  <div className="absolute -bottom-6 -left-4 md:-bottom-8 md:-left-8 bg-white p-6 md:p-8 rounded-3xl shadow-2xl max-w-[260px] md:max-w-[280px] border border-gray-100 z-20">
+                    <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                      <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary shrink-0">
+                        <CheckCircle2 size={20} className="md:w-6 md:h-6" />
                       </div>
-                      <div className="font-bold text-secondary">Aprovado por Especialistas</div>
+                      <div className="font-bold text-secondary text-sm md:text-base leading-tight">Aprovado por Especialistas</div>
                     </div>
-                    <p className="text-gray-500 text-xs italic leading-relaxed">
+                    <p className="text-gray-500 text-[10px] md:text-xs italic leading-relaxed">
                       "A abordagem da Dra. Luciana é o que há de mais avançado em termos de nutrição integrativa e emagrecimento."
                     </p>
                   </div>
@@ -942,10 +943,10 @@ export default function App() {
                   <p className="text-gray-400 mb-10 max-w-xl mx-auto">Sua transformação pode ser a próxima. Agende uma conversa inicial e descubra o caminho para o seu melhor corpo.</p>
                   <a 
                     href="https://wa.me/5511992876219" 
-                    className="inline-flex bg-primary text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 items-center gap-3"
+                    className="inline-flex bg-primary text-white px-6 md:px-10 py-4 md:py-5 rounded-2xl font-black uppercase tracking-wider md:tracking-widest text-[11px] md:text-sm hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 items-center justify-center gap-2 md:gap-3 whitespace-nowrap"
                   >
                     Quero meus resultados
-                    <ArrowRight size={20} />
+                    <ArrowRight size={18} className="md:w-5 md:h-5" />
                   </a>
                 </div>
               </motion.div>
