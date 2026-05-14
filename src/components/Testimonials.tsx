@@ -50,7 +50,7 @@ const Testimonials = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
-            className="bg-white p-10 lg:p-12 rounded-[48px] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border-2 border-primary/5 hover:border-primary transition-all duration-700 flex flex-col relative group"
+            className="bg-white p-10 lg:p-12 rounded-[48px] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border-2 border-primary transition-all duration-700 flex flex-col relative group"
           >
             <div className="absolute -top-6 left-12 w-12 h-12 bg-primary text-white rounded-2xl flex items-center justify-center shadow-xl shadow-primary/20 rotate-12 group-hover:rotate-0 transition-transform duration-500">
               <Quote size={24} />
@@ -93,7 +93,7 @@ const Testimonials = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.25, ease: "circOut" }}
-            className="bg-white p-8 rounded-[32px] shadow-xl border border-primary/10 flex flex-col relative"
+            className="bg-white p-8 rounded-[32px] shadow-xl border-2 border-primary flex flex-col relative"
           >
              <div className="absolute -top-5 right-8 w-10 h-10 bg-primary/10 text-primary rounded-2xl flex items-center justify-center rotate-12">
               <Quote size={20} />

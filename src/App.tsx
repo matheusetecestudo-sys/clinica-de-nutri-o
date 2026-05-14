@@ -8,6 +8,7 @@ import {
   Menu, 
   X, 
   ChevronRight, 
+  ChevronLeft,
   ChevronDown, 
   Instagram, 
   Facebook, 
@@ -805,17 +806,25 @@ export default function App() {
                     </motion.div>
                   </AnimatePresence>
 
-                  {/* Navigation Arrows */}
-                  <div className="flex items-center justify-between absolute top-1/2 -translate-y-1/2 w-full left-0 px-2 pointer-events-none">
+                  {/* Carousel Controls */}
+                  <div className="flex items-center justify-between mt-8 px-4">
                     <button 
                       onClick={() => setActiveResultIndex((prev) => (prev - 1 + results.length) % results.length)}
-                      className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white pointer-events-auto active:bg-primary transition-all shadow-2xl"
+                      className="w-12 h-12 rounded-full bg-white border border-gray-100 flex items-center justify-center text-primary shadow-lg active:scale-95 transition-all"
                     >
-                      <ChevronRight className="rotate-180" size={24} />
+                      <ChevronLeft size={24} />
                     </button>
+                    <div className="flex gap-1.5">
+                      {results.map((_, i) => (
+                        <div 
+                          key={i} 
+                          className={`h-1.5 rounded-full transition-all duration-300 ${i === activeResultIndex ? "bg-primary w-6" : "bg-gray-200 w-1.5"}`}
+                        />
+                      ))}
+                    </div>
                     <button 
                       onClick={() => setActiveResultIndex((prev) => (prev + 1) % results.length)}
-                      className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white pointer-events-auto active:bg-primary transition-all shadow-2xl"
+                      className="w-12 h-12 rounded-full bg-white border border-gray-100 flex items-center justify-center text-primary shadow-lg active:scale-95 transition-all"
                     >
                       <ChevronRight size={24} />
                     </button>
