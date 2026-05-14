@@ -679,13 +679,13 @@ export default function App() {
                   transition={{ duration: 1 }}
                   className="relative"
                 >
-                  <div className="aspect-[4/5] md:aspect-square rounded-[40px] md:rounded-[48px] overflow-hidden border border-white/10 shadow-2xl relative group">
+                  <div className="rounded-[40px] md:rounded-[48px] overflow-hidden border border-white/10 shadow-2xl relative group">
                     <img 
-                      src="https://images.unsplash.com/photo-1543353071-087092ec393a?auto=format,compress&fit=crop&q=80&w=1000" 
-                      alt="Metodologia Científica DUNO"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                      src="/images/doutora02.png" 
+                      alt="Dra. Luciana Duno - Metodologia Científica DUNO"
+                      className="w-full h-auto block"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 via-transparent to-transparent" />
                   </div>
                   
                   {/* Floating Result Card */}
